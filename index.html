@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Índice de Industria 4.0</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ </head>
+
+<body>
+  <div class="container">
+    <h1>Índice de Industria 4.0</h1>
+    <form id="indice-industria-4.0"></form>
+
+    <!-- Sección 1: Datos Básicos -->
+    <section id="seccion-1">
+      <h2>Datos Básicos</h2>
+
+      <!-- Nombre de la empresa -->
+      <label for="nombre-empresa">¿Cuál es el nombre de la empresa?</label>
+      <br/>
+      <br/>
+      <input type="text" id="nombre-empresa" name="nombre-empresa" placeholder="Escribe el nombre de la empresa" class="caja-texto-mediana" required>
+      <br/>
+      <br/>
+      <!-- Ubicación: Departamento -->
+      <br/>
+      <label for="departamento y municipio">¿Dónde se encuentra ubicada?</label>
+      <br/>
+      <br/>
+      <select id="departamento" required>
+        <option value="">Selecciona un departamento</option>
+        <option value="Cauca">CAUCA</option>
+      </select>
+        
+      <!-- Ubicación: Municipio -->
+      <br/>
+      <br/>
+      <select id="municipio" required>
+        <option value="">Selecciona un municipio</option>
+        <option value="ALMAGUER">ALMAGUER</option>
+        <option value="ARGELIA">ARGELIA</option>
+        <option value="BALBOA">BALBOA</option>
+        <option value="BOLIVAR">BOLIVAR</option>
+        <option value="BUENOS AIRES">BUENOS AIRES</option>
+        <option value="CAJIBIO">CAJIBIO</option>
+        <option value="CALDONO">CALDONO</option>
+        <option value="CALOTO">CALOTO</option>
+        <option value="CORINTO">CORINTO</option>
+        <option value="EL TAMBO">EL TAMBO</option>
+        <option value="FLORENCIA">FLORENCIA</option>
+        <option value="GUACHENÉ">GUACHENÉ</option>
+        <option value="GUAPI">GUAPI</option>
+        <option value="INZÁ">INZÁ</option>
+        <option value="JAMBALÓ">JAMBALÓ</option>
+        <option value="LA SIERRA">LA SIERRA</option>
+        <option value="LA VEGA">LA VEGA</option>
+        <option value="LÓPEZ">LÓPEZ</option>
+        <option value="MERCADERES">MERCADERES</option>
+        <option value="MIRANDA">MIRANDA</option>
+        <option value="MORALES">MORALES</option>
+        <option value="PADILLA">PADILLA</option>
+        <option value="PÁEZ">PÁEZ</option>
+        <option value="PATIA">PATIA</option>
+        <option value="PIAMONTE">PIAMONTE</option>
+        <option value="PIENDAMÓ">PIENDAMÓ</option>
+        <option value="POPAYÁN">POPAYÁN</option>
+        <option value="PUERTO TEJADA">PUERTO TEJADA</option>
+        <option value="PURACÉ">PURACÉ</option>
+        <option value="ROSAS">ROSAS</option>
+        <option value="SAN SEBASTIÁN">SAN SEBASTIÁN</option>
+        <option value="SANTANDER DE QUILICHAO">SANTANDER DE QUILICHAO</option>
+        <option value="SANTA ROSA">SANTA ROSA</option>
+        <option value="SILVIA">SILVIA</option>
+        <option value="SUÁREZ">SUÁREZ</option>
+        <option value="SUCRE">SUCRE</option>
+        <option value="TIMBIO">TIMBIO</option>
+        <option value="TIMBIQUÍ">TIMBIQUÍ</option>
+        <option value="TORIBIO">TORIBIO</option>
+        <option value="TOTORÓ">TOTORÓ</option>
+        <option value="VILLA RICA">VILLA RICA</option>
+      </select>
+
+      <!-- Actividad Principal -->
+      <br/>
+      <br/>
+      <br/>
+      <label for="actividad-principal">¿Cuál es la actividad principal?</label>
+      <br/>
+      <br/>
+      <select id="actividad-principal" required>
+        <option value="">Selecciona una actividad</option>
+        <option value="Elaboración de productos alimenticios y bebidas">Elaboración de productos alimenticios y bebidas</option>
+        <option value="Elaboración de productos de tabaco">Elaboración de productos de tabaco</option>
+        <option value="Fabricación de productos textiles">Fabricación de productos textiles</option>
+        <option value="Confección de prendas de vestir; Terminación y teñido de pieles">Confección de prendas de vestir; Terminación y teñido de pieles</option>
+        <option value="Curtido y terminación de cueros; Fabricación de artículos de marroquinería, talabartería y calzado y de sus partes">Curtido y terminación de cueros; Fabricación de artículos de marroquinería, talabartería y calzado y de sus partes</option>
+        <option value="Producción de madera y Fabricación de productos de madera y corcho, excepto muebles; Fabricación de artículos de paja y de materiales trenzables">Producción de madera y Fabricación de productos de madera y corcho, excepto muebles</option>
+        <option value="Fabricación de artículos de paja y de materiales trenzables">Fabricación de artículos de paja y de materiales trenzables</option>
+        <option value="Fabricación de papel y de productos de papel">Fabricación de papel y de productos de papel</option>
+        <option value="Edición e impresión; reproducción de grabaciones">Edición e impresión; reproducción de grabaciones</option>
+        <option value="Fabricación de coque, productos de la refinación del petróleo y combustible nuclear">Fabricación de coque, productos de la refinación del petróleo y combustible nuclear</option>
+        <option value="Fabricación de sustancias y productos químicos">Fabricación de sustancias y productos químicos</option>
+        <option value="Fabricación de productos de caucho y plástico">Fabricación de productos de caucho y plástico</option>
+        <option value="Fabricación de productos minerales no metálicos">Fabricación de productos minerales no metálicos</option>
+        <option value="Fabricación de metales comunes">Fabricación de metales comunes</option>
+        <option value="Fabricación de productos elaborados de metal, excepto maquinaria y equipo">Fabricación de productos elaborados de metal, excepto maquinaria y equipo</option>
+        <option value="Fabricación de maquinaria y equipo n.c.p">Fabricación de maquinaria y equipo n.c.p</option>
+        <option value="Fabricación de maquinaria de oficina, contabilidad e informática">Fabricación de maquinaria de oficina, contabilidad e informática</option>
+        <option value="Fabricación de maquinaria y aparatos eléctricos n.c.p">Fabricación de maquinaria y aparatos eléctricos n.c.p</option>
+        <option value="Fabricación de equipos y aparatos de radio, televisión y comunicaciones">Fabricación de equipos y aparatos de radio, televisión y comunicaciones</option>
+        <option value="Fabricación de instrumentos médicos, ópticos y de precisión; Fabricación de relojes">Fabricación de instrumentos médicos, ópticos y de precisión; Fabricación de relojes</option>
+        <option value="Fabricación de vehículos automotores, remolques y semirremolques">Fabricación de vehículos automotores, remolques y semirremolques</option>
+        <option value="Fabricación de equipo de transporte n.c.p">Fabricación de equipo de transporte n.c.p</option>
+        <option value="Fabricación de muebles y colchones; industrias manufactureras n.c.p">Fabricación de muebles y colchones; industrias manufactureras n.c.p</option>
+        <option value="Reciclamiento">Reciclamiento</option>
+        <option value="Otras actividades">Otras actividades</option>
+      </select>
+
+      <!-- Figura Legal -->
+     <br/>
+     <br/>
+     <br/>
+     <label for="figura-legal">Figura legal</label>
+     <br/>
+     <br/>
+     <select id="figura-legal" required>
+        <option value="">Selecciona una figura legal</option>
+        <option value="Sociedad Anónima (S.A.)">Sociedad Anónima (S.A.)</option>
+        <option value="Sociedad de Responsabilidad Limitada (S.R.L.)">Sociedad de Responsabilidad Limitada (S.R.L.)</option>
+        <option value="Sociedad por Acciones Simplificada (S.A.S.)">Sociedad por Acciones Simplificada (S.A.S.)</option>
+        <option value="Unipersonal">Unipersonal</option>
+        <option value="Cooperativa">Cooperativa</option>
+        <option value="Otra">Otra</option>
+     </select>
+     <br/>
+     <br/>
+     <button id="continuarBtn">Enviar</button>
+     <button onclick="cambiarSeccion('seccion-2')">Continuar</button>
+     </section>
+
+    <div class="container">
+    <section id="seccion-2" style="display: none;">
+        <h2>Información adicional</h2>
+ 
+    <!-- Nombre -->
+    <br/>
+    <label for="nombre">¿Cuál es su nombre?</label>
+    <br/>
+    <br/>
+    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" class="caja-texto-mediana" required>
+
+    <!-- Sector de trabajo -->
+    <br/>
+    <br/>
+    <br/>
+    <label for="sector">¿En qué sector de la empresa desempeñas tu trabajo?</label>
+    <br/>
+    <br/>
+    <input type="text" id="sector" name="sector" placeholder="Escribe tu sector de trabajo" class="caja-texto-mediana" required>
+
+    <!-- Cargo o función -->
+    <br/>
+    <br/>
+    <br/>
+    <label for="cargo">¿Qué cargo o función cumples?</label>
+    <br/>
+    <br/>
+    <input type="text" id="cargo" name="cargo" placeholder="Escribe tu cargo o función" class="caja-texto-mediana" required>
+
+    <!-- Tamaño de la empresa -->
+    <br/>
+    <br/>
+    <br/>
+    <label for="tamano">¿Cuál es el tamaño de la empresa de acuerdo a la cantidad de empleados?</label>
+    <br/>
+    <br/>
+    <select id="tamano" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Micro">Micro - (Empleados de 1 a 15)</option>
+      <option value="Pequeña">Pequeña - (Empleados de 16 a 60)</option>
+      <option value="Mediana Tramo 1">Mediana Tramo 1 - (Empleados de 61 a 235)</option>
+      <option value="Mediana Tramo 2">Mediana Tramo 2 - (Empleados de 236 a 655)</option>
+      <option value="Grande">Grande - (Empleados a partir de 656)</option>
+    </select>
+
+    <!-- Sector responsable de tecnología -->
+    <br/>
+    <br/>
+    <br/>
+    <label>¿Cuenta la empresa con un sector o encargado responsable de los temas de Tecnología?</label>
+    <br/>
+    <br/>
+    <label><input type="radio" name="sector-tecnologia" value="Si" required> Sí</label>
+    <br/>
+    <br/>  
+    <label><input type="radio" name="sector-tecnologia" value="No"required> No</label>
+    <br/>
+    <br/>  
+    <button id="continuarBtn2">Enviar</button>
+    <button onclick="cambiarSeccion('seccion-3')">Continuar</button>
+    <button onclick="cambiarSeccion('seccion-1')">Volver</button>
+    </section>
+    <br/>
+    <br/>
+      
+      
+      
+    <section id="seccion-3" style="display: none;">
+      <h2>Visión de Recursos Humanos</h2>
+      <h2>A. Empleadores y Empleados</h2>
+      
+     <!-- Pregunta 1 -->
+      <h3>Autonomía de los empleados</h3>
+      <label>¿Qué herramientas digitales utiliza la empresa para facilitar la toma de decisiones autónomas por parte de los empleados?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q1a" name="herramientas" value="gestion_proyectos"> Herramientas de Gestión de Proyectos y Flujos de Trabajo (Asana, Trello, Zapier, etc.)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q1b" name="herramientas" value="analisis_datos"> Herramientas de Análisis de Datos y Gestión Financiera (Tableau, Power BI, QuickBooks, etc.)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q1c" name="herramientas" value="comunicacion"> Plataformas de Comunicación y Colaboración Interna (Slack, Microsoft Teams, Google Drive, etc.)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q1d" name="herramientas" value="capacitacion"> Sistemas de Conocimiento y Capacitación (Confluence, Notion, Coursera, etc.)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q1e" name="herramientas" value="clientes"> Herramientas de Gestión de Clientes y Estrategia (Salesforce, HubSpot, Monday.com, etc.)</label>
+      <br/>
+      <br/>
+     <button onclick="cambiarSeccion('seccion-4')">Continuar</button>
+     <button onclick="cambiarSeccion('seccion-2')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-4" style="display: none;">
+      
+     <!-- Pregunta 2 --> 
+      <h3>Necesidad de los empleadores</h3>
+      <label>¿Qué estrategias adopta la empresa para garantizar la formación continua a nuevas tecnologías en sus empleados?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q2a" name="estrategias" value="capacitacion_interna"> Capacitación Interna y Mentoría (talleres, seminarios, mentoría con expertos internos, etc.)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q2b" name="estrategias" value="cursos_externos"> Acceso a Plataformas y Cursos Externos (Udemy, Coursera, presupuesto para certificaciones, etc.)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q2c" name="estrategias" value="eventos"> Participación en Eventos y Colaboración Externa (conferencias, colaboración con universidades, etc.)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q2d" name="estrategias" value="proyectos"> Desarrollo de Competencias a través de Proyectos y Roles (rotación de roles, hackathons, retos internos, etc.)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q2e" name="estrategias" value="incentivos"> Incentivos y Reconocimientos para el Aprendizaje (reconocimientos para adquirir nuevas habilidades, etc.)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-5')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-3')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-5" style="display: none;">
+      
+     <!-- Pregunta 3 --> 
+      <h3>Habilidades de los empleados</h3>
+      <label>¿La empresa cuenta con un plan de contratación donde se tenga en cuenta las habilidades técnicas y blandas de los empleados en un entorno de Industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q3a" name="contratacion" value="integral"> Sí, con enfoque integral: La empresa evalúa tanto habilidades técnicas como blandas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q3b" name="contratacion" value="parcial"> Sí, con enfoque parcial: La empresa prioriza habilidades técnicas o blandas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q3c" name="contratacion" value="en_desarrollo"> No, pero en desarrollo: Se está trabajando en un plan que considere ambas habilidades</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q3d" name="contratacion" value="desconocido"> No o desconocido: No existe un plan formal o no se tiene información al respecto</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-6')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-4')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-6" style="display: none;">
+      <h2>B. Entrenamiento y Capacitación</h2>
+     
+     <!-- Pregunta 4 --> 
+      <h3>Personal capacitado</h3>
+      <label>¿Cuál es el número de personas capacitadas con cursos, certificaciones, diplomados etc., con respecto a tecnologías de la Industria 4.0? </label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q4a" name="personas" value="mas_100">Más de 100 personas capacitadas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q4b" name="personas" value="26-100">Entre 26-100 personas capacitadas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q4c" name="personas" value="1-25">Entre 1-25 personas capacitadas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q4d" name="personas" value="desconocido">Aún no o desconocido: No se han capacitado personas o se desconoce el número)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-7')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-5')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-7" style="display: none;">
+      <h2>C. Interacción Hombre-Máquina</h2>
+      
+      <!-- Pregunta 5 -->
+      <h3>Diseño centrado en el usuario</h3>
+      <label>Para la empresa, ¿El diseño centrado en el usuario es un factor importante que contribuye a la diferenciación competitiva en un mercado impulsado por la industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q5a" name="factor" value="fundamental">Es fundamental: El diseño centrado en el usuario es clave para nuestra diferenciación competitiva</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q5b" name="factor" value="importante">Es importante en ciertos aspectos: Relevante, pero solo en áreas específicas del negocio</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q5c" name="factor" value="menor_importancia">Se le da menor importancia: Reconocido, pero no prioritario frente a otros factores</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q5d" name="factor" value="desconocido">No es relevante o desconocido: No se considera importante o no se ha evaluado su impacto</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-8')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-6')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-8" style="display: none;">
+      
+      <!-- Pregunta 6 -->
+      <h3>Diseño sensible al valor</h3>
+      <label>¿La empresa integra principios éticos y sostenibles en el diseño de productos y sistemas en la industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q6a" name="principios" value="integrados">Integrados de forma consistente: La empresa incorpora principios éticos y sostenibles en el diseño de productos y sistemas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q6b" name="principios" value="en_desarrollo">En desarrollo parcial o reciente: Se consideran estos principios, pero solo en ciertas etapas o como una práctica reciente</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q6c" name="principios" value="no_integrados">No integrados o implementados: La empresa aún no aplica estos principios de manera consistente o no los ha implementado</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q6d" name="principios" value="desconocido">Desconocido: No se tiene información sobre la integración de estos principios en el diseño</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-9')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-7')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-9" style="display: none;">
+      <h2>Visión Técnica</h2>
+      <h2>A. Fábrica Inteligente</h2>
+      
+       <!-- Pregunta Condicional -->
+      <h3>Tecnología M2M</h3>
+      <label>¿La empresa posee Tecnología M2M (Machine To Machine)?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="tecnologia-m2m" value="Si" onclick="cambiarSeccionCondicional('seccion-10')">Sí</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="tecnologia-m2m" value="No" onclick="cambiarSeccionCondicional('seccion-11')">No</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-8')">Volver</button>
+    </section>
+
+    <section id="seccion-10" style="display: none;">
+      
+      <!-- Pregunta 7 -->
+      <h3>Tecnología M2M</h3>
+      <label>¿Qué desafíos presenta la empresa en la implementación de tecnología M2M para asegurar una comunicación fluida entre máquinas?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q7a" name="desafiosm2m" value="compatibilidad"> Compatibilidad e Interoperabilidad de Sistemas</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q7b" name="desafiosm2m" value="costos"> Costos de Implementación y Mantenimiento</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q7c" name="desafiosm2m" value="estandares"> Estándares y Escalabilidad</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q7d" name="desafiosm2m" value="ciberseguridad"> Ciberseguridad y Protección de Datos</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q7e" name="desafiosm2m" value="capacitacion"> Capacitación y Recursos Humanos</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-11')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-9')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-11" style="display: none;">
+      
+      <!-- Pregunta 8 -->
+      <h3>Optimización</h3>
+      <label>¿Qué métodos de optimización utiliza la empresa para mejorar el flujo de información en un entorno de Industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q8a" name="optimizacion" value="integracion"> Integración y Gestión de Datos</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q8b" name="optimizacion" value="automatizacion"> Automatización y Optimización de Procesos</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q8c" name="optimizacion" value="analisis"> Análisis Avanzado y Visualización</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q8d" name="optimizacion" value="estandares"> Estándares y Conectividad</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q8e" name="optimizacion" value="ia"> Inteligencia Artificial y Capacitación</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-12')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-10')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-12" style="display: none;">
+      
+      <!-- Pregunta 9 -->
+      <h3>Simulación</h3>
+      <label>¿La empresa cuenta con procesos de simulación para mejorar la planificación y optimización de procesos en un entorno de Industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q9a" name="simulacion" value="uso_regular">Uso regular: La empresa utiliza simulaciones de manera habitual para la planificación y optimización de procesos</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q9b" name="simulacion" value="uso_parcial">Uso parcial o en desarrollo: Las simulaciones se usan solo en áreas específicas o su implementación es reciente y en desarrollo</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q9c" name="simulacion" value="no_implementada">No implementadas: La empresa no utiliza simulaciones, aunque podría tener planes futuros o no considera que sean necesarias actualmente</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q9d" name="simulacion" value="desconocido">Desconocido: No se tiene información sobre el uso de simulaciones en la empresa</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-13')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-11')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-13" style="display: none;">
+      
+      <!-- Pregunta 10 -->
+      <h3> Autonomía de las máquinas</h3>
+      <label>¿La empresa cuenta con una métrica relacionada con el nivel de autonomía necesario de las máquinas para su operabilidad dentro del entorno de la industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q10a" name="metrica" value="metricas_claras">Métricas claras: La empresa tiene métricas bien definidas para medir el nivel de autonomía de las máquinas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q10b" name="metrica" value="metricas_basicas">Métricas básicas o en desarrollo: La empresa usa métricas básicas o está en proceso de desarrollarlas o ajustarlas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q10c" name="metrica" value="sin_metricas">Sin métricas: No se cuenta con métricas específicas, aunque podrían estar en planes futuros o no se consideran necesarias debido a la operación manual de las máquinas</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q10d" name="metrica" value="desconocido">Desconocido: No se tiene información sobre la existencia de métricas relacionadas con la autonomía de las máquinas</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-14')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-12')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-14" style="display: none;">
+      
+      <!-- Pregunta 11 -->
+      <h3>Instalaciones de producción</h3>
+      <label>¿Las instalaciones de producción de la empresa cumplen con los estándares de la Industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q11a" name="produccion" value="cumplimiento_total">Cumplimiento total: Todas las instalaciones de producción cumplen plenamente con los estándares de la Industria 4.0</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q11b" name="produccion" value="cumplimiento_parcial">Cumplimiento parcial o en proceso: Solo algunas áreas cumplen, o se está actualizando para alinear las instalaciones con los estándares</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q11c" name="produccion" value="con_plan">Sin cumplimiento, pero con plan: Las instalaciones actuales no cumplen, pero existe un plan en marcha para lograrlo</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q11d" name="produccion" value="sin_cumplimiento">Sin cumplimiento ni plan o desconocido: Las instalaciones no cumplen y no hay medidas tomadas, o se desconoce si cumplen con los estándares</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-15')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-13')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-15" style="display: none;">
+      <h2>B. Tecnología</h2>
+      
+      <!-- Pregunta Condicional -->
+      <h3>TIC</h3>
+      <label>¿Hacen uso de las TIC dentro de la empresa?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_tic" value="Si" onclick="cambiarSeccionCondicional('seccion-16')">Si</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_tic" value="No" onclick="cambiarSeccionCondicional('seccion-17')">No</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-14')">Volver</button>
+    </section>
+
+    <section id="seccion-16" style="display: none;">
+      
+      <!-- Pregunta 12 -->
+      <h3>TIC</h3>
+      <label>¿Qué papel desempeñan las TIC en la integración y gestión de datos en tiempo real dentro de la empresa? </label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q12a" name="tic" value="eficiencia">Las TIC mejoran la eficiencia: Las TIC ayudan a integrar y gestionar datos en tiempo real, optimizando la toma de decisiones y mejorando la eficiencia operativa</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q12b" name="tic" value="areas_especificas">Enfoque en áreas específicas: Las TIC se utilizan principalmente en ciertas áreas clave para la integración y gestión de datos en tiempo real</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q12c" name="tic" value="en_desarrollo">Capacidad en desarrollo: La empresa está trabajando para optimizar y ampliar la capacidad de las TIC en la gestión de datos en tiempo real</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q12d" name="tic" value="rol_complementario">Rol complementario: Las TIC se integran con otros sistemas o procesos para apoyar la gestión de datos en tiempo real</label>
+      <br/>
+      <br/>
+        <label><input type="checkbox" id="q12e" name="tic" value="oportunidades">Identificación de oportunidades: La empresa evalúa cómo las TIC pueden desempeñar un papel más destacado en la integración y gestión de datos en tiempo real</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-17')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-15')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-17" style="display: none;">
+      
+      <!-- Pregunta Condicional -->
+      <h3>Realidad virtual</h3>
+      <label>¿La empresa hace uso de la realidad virtual?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="realidad_virtual" value="Si" onclick="cambiarSeccionCondicional('seccion-18')">Sí</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="realidad_virtual" value="No" onclick="cambiarSeccionCondicional('seccion-19')">No</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-16')">Volver</button>
+    </section>
+
+    <section id="seccion-18" style="display: none;">
+      
+      <!-- Pregunta 13 -->
+      <h3>Realidad virtual</h3>
+      <label>¿La empresa considera la aplicación de la realidad virtual como efectiva en el diseño y prueba de nuevos productos en el entorno de la industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q13a" name="rvirtual" value="alta_efectividad">Alta efectividad y uso actual: La empresa ya utiliza la realidad virtual y la considera altamente efectiva en el diseño y prueba de productos</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q13b" name="rvirtual" value="uso_experimental">Uso inicial o experimental: La empresa ha comenzado a usar la realidad virtual con resultados prometedores o está en una fase experimental sin resultados concluyentes</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q13c" name="rvirtual" value="evaluacion_futura">Evaluación futura o no considerada: La empresa no la utiliza actualmente, pero evalúa su implementación futura, o no la considera necesaria para los procesos actuales</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q13d" name="rvirtual" value="desconocido">Desconocido: No se tiene claridad sobre si la empresa considera la realidad virtual para estos fines</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-19')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-17')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-19" style="display: none;">
+      
+      <!-- Pregunta Condicional -->
+      <h3>Impresión 3D</h3>
+      <label> ¿Poseen impresión 3D dentro de la empresa?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_impresion_3d" value="Si" onclick="cambiarSeccionCondicional('seccion-20')">Sí</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_impresion_3d" value="No" onclick="cambiarSeccionCondicional('seccion-21')">No</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-18')">Volver</button>
+    </section>
+
+    <section id="seccion-20" style="display: none;">
+      
+      <!-- Pregunta 14 -->
+      <h3>Impresión 3D</h3> <label>¿Qué ventajas posee la impresión 3D en la personalización de productos dentro de un entorno de producción flexible en la empresa? </label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q14a" name="impresion3d" value="produccion_rapida">Producción Rápida y Económica (producción a medida sin altos costos ni herramientas específicas)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q14b" name="impresion3d" value="flexibilidad">Flexibilidad en el Diseño y Adaptación al Mercado (ajustes durante la producción y diseño adaptable)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q14c" name="impresion3d" value="reduccion_desperdicio">Reducción de Desperdicio y Optimización de Recursos (menor uso de material con impresión precisa)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q14d" name="impresion3d" value="experimentacion">Innovación y Experimentación en el Diseño (facilidad para probar nuevos conceptos y diseños)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q14e" name="impresion3d" value="agil_produccion">Agilidad en la Producción y Cadena de Suministro (reducción de tiempos de respuesta y simplificación de la cadena)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-21')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-19')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-21" style="display: none;">
+      
+      <!-- Pregunta 15 -->
+      <h3>Sistemas ciberfísicos</h3>
+      <label>¿La empresa posee sistemas ciberfísicos encargados de la automatización y monitorización de procesos industriales? </label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q15a" name="ciberfisicos" value="implementacion_avanzada">Implementación avanzada: La empresa cuenta con sistemas ciberfísicos avanzados que gestionan y supervisan la mayoría de los procesos industriales</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q15b" name="ciberfisicos" value="implementacion_parcial">Implementación parcial o en desarrollo: La empresa posee algunos sistemas ciberfísicos con implementación parcial, o está en proceso de integrarlos para mejorar la automatización y monitorización</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q15c" name="ciberfisicos" value="en_evaluacion">No implementados, pero en evaluación: La empresa no posee sistemas ciberfísicos, pero está evaluando su incorporación en el futuro</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q15d" name="ciberfisicos" value="no_implementados">No implementados ni considerados: La empresa no tiene sistemas ciberfísicos y no se tienen planes inmediatos para implementarlos, o se desconoce su existencia</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-22')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-20')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-22" style="display: none;">
+      
+      <!-- Pregunta 16 -->
+      <h3>Inteligencia artificial</h3>
+      <label>¿La empresa hace uso de la inteligencia artificial (IA) para optimizar la eficiencia operativa y la calidad en procesos de producción?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q16a" name="ia" value="implementación_integral">Implementación integral: La empresa utiliza inteligencia artificial (IA) de manera integral para optimizar la eficiencia operativa y mejorar la calidad en los procesos de producción</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q16b" name="ia" value="implementacion_parcial">Implementación parcial o en desarrollo: La IA se emplea en áreas específicas o está en proceso de implementación para optimizar la eficiencia y calidad en la producción</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q16c" name="ia" value="en_evaluacion">No implementada, pero en evaluación: La empresa no utiliza IA actualmente, pero está considerando su incorporación para mejorar la eficiencia y calidad en el futuro</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q16d" name="ia" value="no_implementada">No implementada: La empresa no utiliza IA en los procesos de producción en este momento y no tiene planes inmediatos para hacerlo</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-23')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-21')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-23" style="display: none;">
+      
+      <!-- Pregunta Condicional -->
+      <h3>Interfaces hombre-máquina</h3>
+      <label>¿La empresa cuenta con tecnologías HMI (Human Machine Interface)?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_hmi" value="Si" onclick="cambiarSeccionCondicional('seccion-24')">Sí</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_hmi" value="No" onclick="cambiarSeccionCondicional('seccion-25')">No</label>
+      <br/>
+      <br/>
+     <button onclick="cambiarSeccion('seccion-22')">Volver</button> 
+    </section>
+
+    <section id="seccion-24" style="display: none;">
+      
+      <!-- Pregunta 17 -->
+      <h3>Interfaces hombre-máquina</h3>
+      <label>¿Con cuáles tecnologías HMI cuenta la empresa para facilitar el trabajo colaborativo entre humanos y robots? </label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q17a" name="hmi" value="interfaces_intuitivas">Interfaces Intuitivas para el Usuario (interfaces táctiles, paneles intuitivos, dispositivos portátiles)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q17b" name="hmi" value="herramientas_visualizacion">Herramientas de Visualización y Realidad Aumentada (realidad aumentada, visión por computadora)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q17c" name="hmi" value="tiempo_real">Comunicación y Coordinación en Tiempo Real (sistemas de comunicación en tiempo real, plataformas de retroalimentación)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q17d" name="hmi" value="automatizacion_inteligente">Automatización Inteligente y Reconocimiento de Comandos (inteligencia artificial, reconocimiento de voz y comandos)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q17e" name="hmi" value="simulacion">Simulación y Programación Colaborativa (software de simulación, herramientas de programación en lenguaje natural)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-25')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-23')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-25" style="display: none;">
+      
+      <!-- Pregunta Condicional -->
+      <h3>IoT</h3>
+      <label>¿La empresa hace uso de la tecnología IoT?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_iot" value="Si" onclick="cambiarSeccionCondicional('seccion-26')">Sí</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_iot" value="No" onclick="cambiarSeccionCondicional('seccion-27')">No</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-24')">Volver</button>
+    </section>
+
+    <section id="seccion-26" style="display: none;">
+      
+      <!-- Pregunta 18 -->
+      <h3>IoT</h3>
+      <label>¿Qué beneficios representa para la empresa, el IoT en la optimización de la cadena de suministro y la logística industrial?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q18a" name="iot" value="visibilidad_seguimiento">Visibilidad y Seguimiento en Tiempo Real (mejora del seguimiento de inventarios y envíos, control de calidad y estado de productos)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q18b" name="iot" value="analisis_prevencion">Análisis y Prevención de Interrupciones (monitorización de datos en tiempo real, mantenimiento predictivo)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q18c" name="iot" value="optimizacion_rutas">Optimización de Rutas y Procesos Logísticos (planificación de rutas, automatización de procesos)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q18d" name="iot" value="decisiones">Toma de Decisiones Basada en Datos (información detallada para decisiones de compras e inventarios)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q18e" name="iot" value="reduccion_costos">Reducción de Costos y Flexibilidad Operativa (reducción de ineficiencias, capacidad de respuesta ante cambios)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-27')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-25')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-27" style="display: none;">
+      
+      <!-- Pregunta Condicional -->
+      <h3>Computación en la nube</h3>
+      <label>¿La empresa hace uso de la computación en la nube?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="computacion_nube" value="Si" onclick="cambiarSeccionCondicional('seccion-28')">Si</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="computacion_nube" value="No" onclick="cambiarSeccionCondicional('seccion-29')">No</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-26')">Volver</button>
+    </section>
+
+    <section id="seccion-28" style="display: none;">
+      
+      <!-- Pregunta 19 -->
+      <h3>Computación en la nube</h3>
+      <label>¿Ofrece la computación en la nube el acceso y análisis de grandes volúmenes de datos en tiempo real para la empresa?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q19a" name="cloud" value="implementacion_efectiva">Implementación efectiva: La computación en la nube permite el acceso y análisis de grandes volúmenes de datos en tiempo real de manera eficiente</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q19b" name="cloud" value="implementacion_parcial">Implementación parcial o en desarrollo: La computación en la nube ofrece acceso a datos en tiempo real con algunas limitaciones o está en proceso de integración para mejorar su funcionalidad</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q19c" name="cloud" value="uso_limitado">No implementada, pero en uso limitado: La computación en la nube se utiliza para almacenar datos, pero no ofrece análisis en tiempo real completamente integrado</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q19d" name="cloud" value="no_implementada">No implementada: La empresa no utiliza computación en la nube para el acceso o análisis en tiempo real, o emplea otras soluciones</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-29')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-27')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-29" style="display: none;">
+      <h2>C. Fabricación Digital</h2>
+      
+      <!-- Pregunta Condicional -->
+      <h3>CAD</h3>
+      <label> ¿La empresa hace uso de programas de diseño CAD?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_cad" value="Si" onclick="cambiarSeccionCondicional('seccion-30')"> Sí</label>
+      <br/>
+      <br/>
+      <label><input type="radio" name="uso_cad" value="No" onclick="cambiarSeccionCondicional('seccion-31')"> No</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-28')">Volver</button>
+    </section>
+
+    <section id="seccion-30" style="display: none;">
+      
+      <!-- Pregunta 20 -->
+      <h3>CAD</h3>
+      <label>¿La empresa integra el CAD con otras tecnologías como la impresión 3D para procesos de desarrollo y diseño de productos?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q20a" name="cad" value="integracion_completa">Integración completa: La empresa integra CAD con impresión 3D de manera fluida y efectiva en todos los procesos de desarrollo y diseño de productos</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q20b" name="cad" value="integracion_parcial">Integración parcial o en desarrollo: CAD y la impresión 3D están integrados en algunas etapas o se está trabajando en mejorar su integración</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q20c" name="cad" value="con_intencion">Sin integración, pero con intención futura: Actualmente no hay integración, pero se está considerando implementar esta conexión en el futuro</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q20d" name="cad" value="sin_integracion">Sin integración: No existe integración entre CAD e impresión 3D, o ambas tecnologías se utilizan de manera independiente</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-31')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-29')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-31" style="display: none;">
+      
+      <!-- Pregunta 21 -->
+      <h3>Sistemas TI</h3>
+      <label>¿La empresa utiliza los sistemas TI para ayudar a proteger la infraestructura industrial de ciberataques y garantizar la continuidad del negocio?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q21a" name="ti" value="proteccion_avanzada">Protección avanzada: La empresa utiliza sistemas TI avanzados y actualizados para proteger la infraestructura industrial contra ciberataques y asegurar la continuidad del negocio</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q21b" name="ti" value="proteccion_parcial">Protección parcial o en desarrollo: Se emplean sistemas TI para protección, pero hay áreas que requieren mejoras o están en proceso de implementación</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q21c" name="ti" value="sin_protección_adecuada">Sin protección adecuada: Los sistemas TI actuales no cubren suficientemente la protección contra ciberataques ni la continuidad del negocio</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q21d" name="ti" value="sin_informacion_clara">Sin información clara: Se desconoce si los sistemas TI de la empresa están diseñados para estas funciones</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-32')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-30')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-32" style="display: none;">
+      <h2>Visión Estratégica</h2>
+      <h2>A. Cultura Corporativa</h2>
+      
+      <!-- Pregunta 22 -->
+      <h3>Misión y visión</h3>
+      <label>¿Qué elementos clave de la Industria 4.0 deben incorporarse en la misión y visión para guiar la transformación digital de la empresa?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q22a" name="mision" value="tecnologias_avanzadas">Adopción de Tecnologías Avanzadas (IoT, inteligencia artificial, análisis de datos)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q22b" name="mision" value="automatizacion_flexibilidad">Automatización y Flexibilidad en Procesos (sistemas de automatización, personalización y adaptabilidad)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q22c" name="mision" value="innovacion">Innovación y Diseño Digital (fabricación aditiva, diseño digital)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q22d" name="mision" value="sostenibilidad_seguridad">Sostenibilidad y Seguridad (eficiencia energética, ciberseguridad)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q22e" name="mision" value="adaptabilidad">Cultura de Innovación y Adaptabilidad (promoción de innovación continua y prácticas ágiles)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-33')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-31')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-33" style="display: none;">
+      
+      <!-- Pregunta 23 -->
+      <h3>Innovación abierta y disruptiva</h3>
+      <label>¿La empresa contempla la innovación disruptiva en el marco de la Industria 4.0, para transformar el modelo de negocio tradicional?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q23a" name="innovacion" value="transformacion_activa">Transformación activa: La empresa está implementando activamente tecnologías disruptivas de la Industria 4.0 para transformar su modelo de negocio tradicional</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q23b" name="innovacion" value="transformacion_parcial">Transformación parcial o inicial: Se están explorando o implementando tecnologías disruptivas, pero la transformación no está completa o se encuentra en etapas iniciales</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q23c" name="innovacion" value="enfoque_tradicional">Enfoque tradicional: La empresa no considera la innovación disruptiva o prioriza soluciones incrementales para mejorar el modelo de negocio tradicional</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q23d" name="innovacion" value="sin_informacion_clara">Sin información clara: Se desconoce si la empresa contempla la innovación disruptiva dentro del marco de la Industria 4.0</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-34')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-32')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-34" style="display: none;">
+      <h2>B. Hoja de Ruta</h2>
+      
+      <!-- Pregunta 24 -->
+      <h3>Tendencias tecnológicas</h3>
+      <label>¿Cuáles son las tendencias tecnológicas emergentes de la Industria 4.0 que podrían adaptar en la empresa para transformar los procesos de fabricación?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q24a" name="tendencias" value="conectividad_avanzada">IoT y Conectividad Avanzada (IoT, redes 5G para monitorización y comunicación en tiempo real)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q24b" name="tendencias" value="inteligencia_artificial">Inteligencia Artificial y Análisis de Datos (IA, aprendizaje automático, big data, análisis predictivo)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q24c" name="tendencias" value="robotica">Robótica y Automatización Colaborativa (cobots, sistemas ciberfísicos para integración física y digital)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q24d" name="tendencias" value="fabricacion_aditiva">Fabricación Aditiva y Realidad Extendida (impresión 3D, realidad aumentada y virtual)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q24e" name="tendencias" value="seguridad">Seguridad y Trazabilidad en la Cadena de Suministro (blockchain para transparencia y trazabilidad, mantenimiento predictivo)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-35')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-33')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-35" style="display: none;">
+      
+      <!-- Pregunta 25 -->
+      <h3>Estado de situación</h3>
+      <label>¿Qué metodologías considera la empresa son efectivas para realizar un diagnóstico del estado de situación en relación con la transformación digital en la Industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q25a" name="responsabilidad" value="evaluacion_madurez">Evaluación de Madurez y Capacidades Digitales (modelo de madurez, auditorías tecnológicas, evaluación de herramientas existentes)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q25b" name="responsabilidad" value="evaluacion_competencias">Evaluación de Competencias y Adopción Digital (encuestas, entrevistas con empleados y líderes, análisis comparativo)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q25c" name="responsabilidad" value="analisis_impacto">Análisis de Impacto y Resultados (evaluación del impacto en eficiencia operativa y resultados financieros)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q25d" name="responsabilidad" value="consultorias">Consultorías y Visión Externa (consultorías especializadas, proyectos piloto para evaluar nuevas tecnologías)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q25e" name="responsabilidad" value="monitoreo">Monitoreo y Seguimiento Continuo (monitoreo de KPIs, revisión de estrategias y planes de acción)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-36')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-34')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-36" style="display: none;">
+      
+      <!-- Pregunta 26 -->
+      <h3>Marco de innovación</h3>
+      <label>Dentro del marco de innovación, ¿Qué estrategias considera la empresa son esenciales para aprovechar las tecnologías de la Industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q26a" name="einnvovacion" value="desarrollo_estrategias">Desarrollo de Estrategias y Planes (hoja de ruta clara, proyectos piloto, metodologías ágiles)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q26b" name="einnvovacion" value="cultura_innovacion">Cultura de Innovación y Colaboración (fomento de innovación, ecosistema de colaboración interna)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q26c" name="einnvovacion" value="desarrollo_habilidades">Capacitación y Desarrollo de Habilidades (inversión en capacitación, desarrollo de habilidades tecnológicas)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q26d" name="einnvovacion" value="alianzas_estrategicas">Alianzas Estratégicas y Proveedores (colaboración con proveedores y expertos en Industria 4.0)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q26e" name="einnvovacion" value="optimizacion_tecnologias">Integración y Optimización de Tecnologías Emergentes (IoT, IA, análisis de datos, I+D)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-37')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-35')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-37" style="display: none;">
+      
+      <!-- Pregunta 27 -->
+      <h3>Plan de acción</h3>
+      <label>¿Cuáles son los componentes esenciales de un plan de acción efectivo para la implementación de la Industria 4.0 según la empresa?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q27a" name="accion" value="definicion_objetivos">Definición de Objetivos y Planificación (objetivos alineados con la estrategia, hoja de ruta detallada)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q27b" name="accion" value="seleccion_tecnologias">Selección de Tecnologías y Recursos (evaluación y selección de tecnologías, asignación de recursos)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q27c" name="accion" value="liderazgo">Liderazgo y Gestión del Cambio (equipo de liderazgo, gestión del cambio, desarrollo de habilidades)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q27d" name="accion" value="integracion_sistemas">Integración de Sistemas y Procesos (integración de tecnologías con sistemas existentes, optimización de operaciones)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q27e" name="accion" value="monitoreo">Monitoreo y Ajustes Continuos (seguimiento con KPIs, retroalimentación y ajustes del plan)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-38')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-36')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-38" style="display: none;">
+      
+      <!-- Pregunta 28 -->
+      <h3>Implementación</h3>
+      <label>¿Cómo mide la empresa el éxito de la implementación de la Industria 4.0 en términos de retorno de la inversión y eficiencia operativa?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q28a" name="implementacion" value="roi">Análisis de Retorno de la Inversión (ROI) (comparación de costos de implementación y beneficios financieros)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q28b" name="implementacion" value="eficiencia_operativa">Mejoras en Eficiencia Operativa (reducción de tiempos de inactividad, aumento de productividad, optimización de recursos)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q28c" name="implementacion" value="indicadores_desempeño">Indicadores de Desempeño y Productividad (KPIs como tiempo de ciclo, tasa de defectos, eficiencia general del equipo)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q28d" name="implementacion" value="impacto_costos">Impacto en Costos y Capacidad de Producción (reducción de costos operativos, incremento en capacidad y flexibilidad de producción)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q28e" name="implementacion" value="satisfaccion">Calidad, Innovación y Satisfacción del Cliente (mejoras en calidad de producto, satisfacción del cliente, capacidad de innovación)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-39')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-37')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-39" style="display: none;">
+      <h2>C. Organización Corporativa Interna</h2>
+      
+      <!-- Pregunta 29 -->
+      <h3>Unidades organizativas</h3>
+      <label>¿Cómo pueden las unidades organizativas dentro de la empresa adaptarse para aprovechar las tecnologías de la Industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q29a" name="organizativas" value="capacitacion">Capacitación y Desarrollo (programas de capacitación continua, adquisición de habilidades tecnológicas)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q29b" name="organizativas" value="innovacion">Cultura de Innovación y Cambio (fomento de una cultura abierta al cambio, adopción de metodologías ágiles)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q29c" name="organizativas" value="integracion">Integración y Estrategias Tecnológicas (estrategias de integración tecnológica, soluciones escalables, auditorías de procesos)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q29d" name="organizativas" value="colaboracion">Colaboración y Liderazgo (equipos interdisciplinarios, colaboración entre unidades, liderazgo en implementación)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q29e" name="organizativas" value="evaluacion">Gestión del Cambio y Evaluación (plan de cambio organizacional, métricas y KPIs para evaluar impacto)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-40')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-38')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-40" style="display: none;">
+      
+      <!-- Pregunta 30 -->
+      <h3>Gestión de organizaciones Dinámicas</h3>
+      <label>¿Qué mejoras considera la empresa para adaptarse rápidamente a las demandas cambiantes del mercado en la Industria 4.0?</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q30a" name="mejoras" value="adopcion_tecnologias">Adopción de Tecnologías Ágiles (soluciones en la nube, plataformas modulares, inteligencia artificial)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q30b" name="mejoras" value="metodologias_agiles">Metodologías Ágiles y Gestión de Proyectos (Scrum, Kanban, procesos de mejora continua)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q30c" name="mejoras" value="cultura_organizacional">Cultura Organizacional y Formación (cultura de cambio e innovación, formación continua)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q30d" name="mejoras" value="colaboracion">Colaboración y Flexibilidad (trabajo interdepartamental, adaptación de la cadena de suministro)</label>
+      <br/>
+      <br/>
+      <label><input type="checkbox" id="q30e" name="mejoras" value="analisis_datos">Análisis de Datos y Alianzas Estratégicas (uso de análisis de datos, CRM, alianzas con otras empresas)</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-41')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-39')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-41" style="display: none;">
+      
+      <!-- Pregunta 31 -->
+      <h3>Responsabilidad Individual</h3>
+      <label>¿La responsabilidad individual puede contribuir al éxito de la adopción de tecnologías de Industria 4.0 en la empresa?</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q31a" name="individual" value="impacto_crucial">Impacto crucial: La responsabilidad individual es clave para el éxito de la adopción de tecnologías de Industria 4.0, asegurando compromiso y proactividad en la implementación</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q31b" name="individual" value="contribucion_significativa">Contribución significativa: La responsabilidad individual facilita la adopción al mejorar procesos y resolver problemas específicos, pero no es el único factor determinante</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q31c" name="individual" value="dependencia_organizacional">Dependencia organizacional: El éxito de la adopción depende más de la estrategia, liderazgo y apoyo organizacional que de la responsabilidad individual</label>
+      <br/>
+      <br/>
+      <label><input type="radio" id="q31d" name="individual" value="desconocido">Sin información clara: Se desconoce el impacto de la responsabilidad individual en la adopción de tecnologías de Industria 4.0 dentro de la empresa</label>
+      <br/>
+      <br/>
+      <button onclick="cambiarSeccion('seccion-42')">Continuar</button>
+      <button onclick="cambiarSeccion('seccion-40')">Volver</button>
+    </section>
+
+      
+      
+    <section id="seccion-42" style="display: none;">
+      
+      <!-- Resultados -->
+      <!-- Inicialmente oculta -->
+      <h2>Resultados del Índice</h2>
+      <br/>
+      <br/>
+      <p>Consulta los resultados obtenidos del análisis:</p>
+      <br/>
+      <br/>
+      <button onclick="finalizarCuestionario()">Enviar</button>
+      <button onclick="procesarResultados()">Calcular Puntaje</button>
+      <!-- Contenedores de los gráficos -->
+      <div style="display: flex; flex-direction: column; justify-content: space-around; margin-top: 20px;">
+        <canvas id="grafico-barra" width="400" height="200"></canvas>
+        <br/>
+        <canvas id="grafico-circular" width="400" height="200"></canvas>
+      </div>
+    </section>
+    </div>
+    
+
+    <!-- Enlace a la librería Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    
+     <!-- Enlace a la librería SheetJS -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    </div>
+
+</body>
+
+</html>
