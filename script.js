@@ -551,7 +551,7 @@ function enviarDatos() {
   }
   console.log("Datos a enviar:", datos);
 
-  fetch("https://indice-industria-4-0.onrender.com", {
+  fetch("https://indice-industria-4-0.onrender.com/guardar", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(datos),
