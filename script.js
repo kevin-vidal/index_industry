@@ -276,52 +276,52 @@ function cambiarSeccion(seccionDestino) {
 
 // Captura de respuestas al final de "Visión Estratégica"
 function finalizar() {
-  // Obtener respuestas de "Misión y visión"
+  // Obtener respuestas de "Misión y visión" Pregunta 22
   const mision = Array.from(
     document.querySelectorAll("input[name='mision']:checked")
   ).map((input) => input.value);
 
-  // Obtener respuesta única de "Innovación abierta y disruptiva"
+  // Obtener respuesta única de "Innovación abierta y disruptiva" Pregunta 23
   const innovacion = document.querySelector(
     "input[name='innovacion']:checked"
   )?.value;
 
-  // Obtener respuestas de "Tendencias tecnológicas"
+  // Obtener respuestas de "Tendencias tecnológicas" Pregunta 24
   const tendencias = Array.from(
     document.querySelectorAll("input[name='tendencias']:checked")
   ).map((input) => input.value);
 
-  // Obtener respuesta única de "Estado de situación"
+  // Obtener respuesta única de "Estado de situación" Pregunta 25
   const responsabilidad = document.querySelector(
     "input[name='responsabilidad']:checked"
   )?.value;
 
-  // Obtener respuestas de "Marco de innovación"
+  // Obtener respuestas de "Marco de innovación" Pregunta 26
   const estrategiasInnovacion = Array.from(
     document.querySelectorAll("input[name='einnovacion']:checked")
   ).map((input) => input.value);
 
-  // Obtener respuestas de "Plan de acción"
+  // Obtener respuestas de "Plan de acción" Pregunta 27
   const planAccion = Array.from(
     document.querySelectorAll("input[name='accion']:checked")
   ).map((input) => input.value);
 
-  // Obtener respuestas de "Implementación"
+  // Obtener respuestas de "Implementación" Pregunta 28
   const implementacion = Array.from(
     document.querySelectorAll("input[name='implementacion']:checked")
   ).map((input) => input.value);
 
-  // Obtener respuestas de "Unidades organizativas"
+  // Obtener respuestas de "Unidades organizativas" Pregunta 29
   const unidadesOrganizativas = Array.from(
     document.querySelectorAll("input[name='organizativas']:checked")
   ).map((input) => input.value);
 
-  // Obtener respuestas de "Gestión de organizaciones Dinámicas"
+  // Obtener respuestas de "Gestión de organizaciones Dinámicas" Pregunta 30
   const mejoras = Array.from(
     document.querySelectorAll("input[name='mejoras']:checked")
   ).map((input) => input.value);
 
-  // Obtener respuesta única de "Responsabilidad individual"
+  // Obtener respuesta única de "Responsabilidad individual" Pregunta 31
   const respIndividual = document.querySelector(
     "input[name='individual']:checked"
   )?.value;
@@ -342,408 +342,206 @@ function finalizar() {
   alert("Respuestas registradas correctamente.");
 }
 
+// Función para calcular el puntaje de una pregunta abierta
+function calcularPuntajeAbierta(opcionesMarcadas) {
+    switch (opcionesMarcadas) {
+        case 5:
+            return 20; // Excelente
+        case 4:
+            return 15;  // Bueno
+        case 2:
+        case 3:
+            return 10;  // Aceptable
+        case 1:
+            return 5;  // Insuficiente
+        default:
+            return 0;   // No se marcó ninguna opción
+    }
+}
+
+// Función para calcular el puntaje de una pregunta cerrada
+function calcularPuntajeCerrada(opcionSeleccionada) {
+    switch (opcionSeleccionada) {
+        case 1:
+            return 20; // Excelente
+        case 2:
+            return 15;  // Bueno
+        case 3:
+            return 10;  // Aceptable
+        case 4:
+            return 5;  // Insuficiente
+        default:
+            return 0;   // No se seleccionó ninguna opción
+    }
+}
+
 // Función para calcular el puntaje de la Visión de Recursos Humanos
 function calcularPuntajeRecursosHumanos() {
-  const respuestas = {
-    herramientas: Array.from(
-      document.querySelectorAll("input[name='herramientas']:checked")
-    ).map((input) => input.value),
+    const respuestas = {
+        herramientas: Array.from(document.querySelectorAll("input[name='herramientas']:checked")).length,
+        estrategias: Array.from(document.querySelectorAll("input[name='estrategias']:checked")).length,
+        contratacion: document.querySelector("input[name='contratacion']:checked")?.value,
+        personas: document.querySelector("input[name='personas']:checked")?.value,
+        factor: document.querySelector("input[name='factor']:checked")?.value,
+        principios: document.querySelector("input[name='principios']:checked")?.value,
+    };
 
-    estrategias: Array.from(
-      document.querySelectorAll("input[name='estrategias']:checked")
-    ).map((input) => input.value),
+    let puntaje = 0;
+    puntaje += calcularPuntajeAbierta(respuestas.herramientas);
+    puntaje += calcularPuntajeAbierta(respuestas.estrategias);
+    puntaje += calcularPuntajeCerrada(respuestas.contratacion);
+    puntaje += calcularPuntajeCerrada(respuestas.personas);
+    puntaje += calcularPuntajeCerrada(respuestas.factor);
+    puntaje += calcularPuntajeCerrada(respuestas.principios);
 
-    contratacion: document.querySelector("input[name='contratacion']:checked")
-      ?.value,
-
-    personas: document.querySelector("input[name='personas']:checked")?.value,
-
-    factor: document.querySelector("input[name='factor']:checked")?.value,
-
-    principios: document.querySelector("input[name='principios']:checked")
-      ?.value,
-  };
-
-  let puntaje = 0;
-
-  // Calificaciones específicas
-  if (respuestas.herramientas.includes("gestion_proyectos")) puntaje += 0.688;
-  if (respuestas.herramientas.includes("analisis_datos")) puntaje += 0.688;
-  if (respuestas.herramientas.includes("comunicacion")) puntaje += 0.688;
-  if (respuestas.herramientas.includes("capacitacion")) puntaje += 0.688;
-  if (respuestas.herramientas.includes("clientes")) puntaje += 0.688;
-
-  if (respuestas.estrategias.includes("capacitacion_interna")) puntaje += 0.688;
-  if (respuestas.estrategias.includes("cursos_externos")) puntaje += 0.688;
-  if (respuestas.estrategias.includes("eventos")) puntaje += 0.688;
-  if (respuestas.estrategias.includes("proyectos")) puntaje += 0.688;
-  if (respuestas.estrategias.includes("incentivos")) puntaje += 0.688;
-
-  if (respuestas.contratacion === "integral") puntaje += 3;
-  if (respuestas.contratacion === "parcial") puntaje += 2.25;
-  if (respuestas.contratacion === "en_desarrollo") puntaje += 1.5;
-  if (respuestas.contratacion === "desconocido") puntaje += 0.75;
-
-  if (respuestas.personas === "mas_100") puntaje += 3;
-  if (respuestas.personas === "26-100") puntaje += 2.25;
-  if (respuestas.personas === "1-25") puntaje += 1.5;
-  if (respuestas.personas === "desconocido") puntaje += 0.75;
-
-  if (respuestas.factor === "fundamental") puntaje += 3;
-  if (respuestas.factor === "importante") puntaje += 2.25;
-  if (respuestas.factor === "menor_importancia") puntaje += 1.5;
-  if (respuestas.factor === "desconocido") puntaje += 0.75;
-
-  if (respuestas.principios === "integrados") puntaje += 3;
-  if (respuestas.principios === "en_desarrollo") puntaje += 2.25;
-  if (respuestas.principios === "no_integrados") puntaje += 1.5;
-  if (respuestas.principios === "desconocido") puntaje += 0.75;
-
-  return puntaje;
+    return puntaje;
 }
 
 // Función para calcular el puntaje de la Visión Técnica
 function calcularPuntajeTecnica() {
-  const respuestas = {
-    desafiosm2m: Array.from(
-      document.querySelectorAll("input[name='desafiosm2m']:checked")
-    ).map((input) => input.value),
+    const respuestas = {
+        desafiosm2m: Array.from(document.querySelectorAll("input[name='desafiosm2m']:checked")).length,
+        optimizacion: Array.from(document.querySelectorAll("input[name='optimizacion']:checked")).length,
+        simulacion: document.querySelector("input[name='simulacion']:checked")?.value,
+        metrica: document.querySelector("input[name='metrica']:checked")?.value,
+        produccion: document.querySelector("input[name='produccion']:checked")?.value,
+        tic: Array.from(document.querySelectorAll("input[name='tic']:checked")).length,
+        rvirtual: document.querySelector("input[name='rvirtual']:checked")?.value,
+        impresion3d: Array.from(document.querySelectorAll("input[name='impresion3d']:checked")).length,
+        ciberfisicos: document.querySelector("input[name='ciberfisicos']:checked")?.value,
+        ia: document.querySelector("input[name='ia']:checked")?.value,
+        hmi: Array.from(document.querySelectorAll("input[name='hmi']:checked")).length,
+        iot: Array.from(document.querySelectorAll("input[name='iot']:checked")).length,
+        cloud: document.querySelector("input[name='cloud']:checked")?.value,
+        cad: document.querySelector("input[name='cad']:checked")?.value,
+        ti: document.querySelector("input[name='ti']:checked")?.value,
+    };
 
-    optimizacion: Array.from(
-      document.querySelectorAll("input[name='optimizacion']:checked")
-    ).map((input) => input.value),
+    let puntaje = 0;
+    puntaje += calcularPuntajeAbierta(respuestas.desafiosm2m);
+    puntaje += calcularPuntajeAbierta(respuestas.optimizacion);
+    puntaje += calcularPuntajeCerrada(respuestas.simulacion);
+    puntaje += calcularPuntajeCerrada(respuestas.metrica);
+    puntaje += calcularPuntajeCerrada(respuestas.produccion);
+    puntaje += calcularPuntajeAbierta(respuestas.tic);
+    puntaje += calcularPuntajeCerrada(respuestas.rvirtual);
+    puntaje += calcularPuntajeAbierta(respuestas.impresion3d);
+    puntaje += calcularPuntajeCerrada(respuestas.ciberfisicos);
+    puntaje += calcularPuntajeCerrada(respuestas.ia);
+    puntaje += calcularPuntajeAbierta(respuestas.hmi);
+    puntaje += calcularPuntajeAbierta(respuestas.iot);
+    puntaje += calcularPuntajeCerrada(respuestas.cloud);
+    puntaje += calcularPuntajeCerrada(respuestas.cad);
+    puntaje += calcularPuntajeCerrada(respuestas.ti);
 
-    simulacion: document.querySelector("input[name='simulacion']:checked")
-      ?.value,
-
-    metrica: document.querySelector("input[name='metrica']:checked")?.value,
-
-    produccion: document.querySelector("input[name='produccion']:checked")
-      ?.value,
-
-    tic: Array.from(document.querySelectorAll("input[name='tic']:checked")).map(
-      (input) => input.value
-    ),
-
-    rvirtual: document.querySelector("input[name='rvirtual']:checked")?.value,
-
-    impresion3d: Array.from(
-      document.querySelectorAll("input[name='impresion3d']:checked")
-    ).map((input) => input.value),
-
-    ciberfisicos: document.querySelector("input[name='ciberfisicos']:checked")
-      ?.value,
-
-    ia: document.querySelector("input[name='ia']:checked")?.value,
-
-    hmi: Array.from(document.querySelectorAll("input[name='hmi']:checked")).map(
-      (input) => input.value
-    ),
-
-    iot: Array.from(document.querySelectorAll("input[name='iot']:checked")).map(
-      (input) => input.value
-    ),
-
-    cloud: document.querySelector("input[name='cloud']:checked")?.value,
-
-    cad: document.querySelector("input[name='cad']:checked")?.value,
-
-    ti: document.querySelector("input[name='ti']:checked")?.value,
-  };
-
-  let puntaje = 0;
-
-  // Calificaciones específicas
-  if (respuestas.desafiosm2m.includes("compatibilidad")) puntaje += 0.688;
-  if (respuestas.desafiosm2m.includes("costos")) puntaje += 0.688;
-  if (respuestas.desafiosm2m.includes("estandares")) puntaje += 0.688;
-  if (respuestas.desafiosm2m.includes("ciberseguridad")) puntaje += 0.688;
-  if (respuestas.desafiosm2m.includes("capacitacion")) puntaje += 0.688;
-
-  if (respuestas.optimizacion.includes("integracion")) puntaje += 0.688;
-  if (respuestas.optimizacion.includes("automatizacion")) puntaje += 0.688;
-  if (respuestas.optimizacion.includes("analisis")) puntaje += 0.688;
-  if (respuestas.optimizacion.includes("estandares")) puntaje += 0.688;
-  if (respuestas.optimizacion.includes("ia")) puntaje += 0.688;
-
-  if (respuestas.simulacion === "uso_regular") puntaje += 3;
-  if (respuestas.simulacion === "uso_parcial") puntaje += 2.25;
-  if (respuestas.simulacion === "no_implementada") puntaje += 1.5;
-  if (respuestas.simulacion === "desconocido") puntaje += 0.75;
-
-  if (respuestas.metrica === "metricas_claras") puntaje += 3;
-  if (respuestas.metrica === "metricas_basicas") puntaje += 2.25;
-  if (respuestas.metrica === "sin_metricas") puntaje += 1.5;
-  if (respuestas.metrica === "desconocido") puntaje += 0.75;
-
-  if (respuestas.produccion === "cumplimiento_total") puntaje += 3;
-  if (respuestas.produccion === "cumplimiento_parcial") puntaje += 2.25;
-  if (respuestas.produccion === "con_plan") puntaje += 1.5;
-  if (respuestas.produccion === "sin_cumplimiento") puntaje += 0.75;
-
-  if (respuestas.tic.includes("eficiencia")) puntaje += 0.688;
-  if (respuestas.tic.includes("areas_especificas")) puntaje += 0.688;
-  if (respuestas.tic.includes("en_desarrollo")) puntaje += 0.688;
-  if (respuestas.tic.includes("rol_complementario")) puntaje += 0.688;
-  if (respuestas.tic.includes("oportunidades")) puntaje += 0.688;
-
-  if (respuestas.rvirtual === "alta_efectividad") puntaje += 3;
-  if (respuestas.rvirtual === "uso_experimental") puntaje += 2.25;
-  if (respuestas.rvirtual === "evaluacion_futura") puntaje += 1.5;
-  if (respuestas.rvirtual === "desconocido") puntaje += 0.75;
-
-  if (respuestas.impresion3d.includes("produccion_rapida")) puntaje += 0.688;
-  if (respuestas.impresion3d.includes("flexibilidad")) puntaje += 0.688;
-  if (respuestas.impresion3d.includes("reduccion_desperdicio"))
-    puntaje += 0.688;
-  if (respuestas.impresion3d.includes("experimentacion")) puntaje += 0.688;
-  if (respuestas.impresion3d.includes("agil_produccion")) puntaje += 0.688;
-
-  if (respuestas.ciberfisicos === "implementacion_avanzada") puntaje += 3;
-  if (respuestas.ciberfisicos === "implementacion_parcial") puntaje += 2.25;
-  if (respuestas.ciberfisicos === "en_evaluacion") puntaje += 1.5;
-  if (respuestas.ciberfisicos === "no_implementados") puntaje += 0.75;
-
-  if (respuestas.ia === "implementación_integral") puntaje += 3;
-  if (respuestas.ia === "implementacion_parcial") puntaje += 2.25;
-  if (respuestas.ia === "en_evaluacion") puntaje += 1.5;
-  if (respuestas.ia === "no_implementada") puntaje += 0.75;
-
-  if (respuestas.hmi.includes("interfaces_intuitivas")) puntaje += 0.688;
-  if (respuestas.hmi.includes("herramientas_visualizacion")) puntaje += 0.688;
-  if (respuestas.hmi.includes("tiempo_real")) puntaje += 0.688;
-  if (respuestas.hmi.includes("automatizacion_inteligente")) puntaje += 0.688;
-  if (respuestas.hmi.includes("simulacion")) puntaje += 0.688;
-
-  if (respuestas.iot.includes("visibilidad_seguimiento")) puntaje += 0.688;
-  if (respuestas.iot.includes("analisis_prevencion")) puntaje += 0.688;
-  if (respuestas.iot.includes("optimizacion_rutas")) puntaje += 0.688;
-  if (respuestas.iot.includes("decisiones")) puntaje += 0.688;
-  if (respuestas.iot.includes("reduccion_costos")) puntaje += 0.688;
-
-  if (respuestas.cloud === "implementacion_efectiva") puntaje += 3;
-  if (respuestas.cloud === "implementacion_parcial") puntaje += 2.25;
-  if (respuestas.cloud === "uso_limitado") puntaje += 1.5;
-  if (respuestas.cloud === "no_implementada") puntaje += 0.75;
-
-  if (respuestas.cad === "integracion_completa") puntaje += 3;
-  if (respuestas.cad === "integracion_parcial") puntaje += 2.25;
-  if (respuestas.cad === "con_intencion") puntaje += 1.5;
-  if (respuestas.cad === "sin_integracion") puntaje += 0.75;
-
-  if (respuestas.ti === "proteccion_avanzada") puntaje += 3;
-  if (respuestas.ti === "proteccion_parcial") puntaje += 2.25;
-  if (respuestas.ti === "sin_protección_adecuada") puntaje += 1.5;
-  if (respuestas.ti === "sin_informacion_clara") puntaje += 0.75;
-
-  return puntaje;
+    return puntaje;
 }
 
 // Función para calcular el puntaje de la Visión Estratégica
 function calcularPuntajeEstrategica() {
-  const respuestas = {
-    mision: Array.from(
-      document.querySelectorAll("input[name='mision']:checked")
-    ).map((input) => input.value),
+    const respuestas = {
+        mision: Array.from(document.querySelectorAll("input[name='mision']:checked")).length,
+        innovacion: document.querySelector("input[name='innovacion']:checked")?.value,
+        tendencias: Array.from(document.querySelectorAll("input[name='tendencias']:checked")).length,
+        responsabilidad: document.querySelector("input[name='responsabilidad']:checked")?.value,
+        einnovacion: Array.from(document.querySelectorAll("input[name='einnovacion']:checked")).length,
+        accion: Array.from(document.querySelectorAll("input[name='accion']:checked")).length,
+        implementacion: Array.from(document.querySelectorAll("input[name='implementacion']:checked")).length,
+        organizativas: Array.from(document.querySelectorAll("input[name='organizativas']:checked")).length,
+        mejoras: Array.from(document.querySelectorAll("input[name='mejoras']:checked")).length,
+        individual: document.querySelector("input[name='individual']:checked")?.value,
+    };
 
-    innovacion: document.querySelector("input[name='innovacion']:checked")
-      ?.value,
+    let puntaje = 0;
+    puntaje += calcularPuntajeAbierta(respuestas.mision);
+    puntaje += calcularPuntajeCerrada(respuestas.innovacion);
+    puntaje += calcularPuntajeAbierta(respuestas.tendencias);
+    puntaje += calcularPuntajeCerrada(respuestas.responsabilidad);
+    puntaje += calcularPuntajeAbierta(respuestas.einnovacion);
+    puntaje += calcularPuntajeAbierta(respuestas.accion);
+    puntaje += calcularPuntajeAbierta(respuestas.implementacion);
+    puntaje += calcularPuntajeAbierta(respuestas.organizativas);
+    puntaje += calcularPuntajeAbierta(respuestas.mejoras);
+    puntaje += calcularPuntajeCerrada(respuestas.individual);
 
-    tendencias: Array.from(
-      document.querySelectorAll("input[name='tendencias']:checked")
-    ).map((input) => input.value),
-
-    responsabilidad: document.querySelector(
-      "input[name='responsabilidad']:checked"
-    )?.value,
-
-    einnovacion: Array.from(
-      document.querySelectorAll("input[name='einnovacion']:checked")
-    ).map((input) => input.value),
-
-    accion: Array.from(
-      document.querySelectorAll("input[name='accion']:checked")
-    ).map((input) => input.value),
-
-    implementacion: Array.from(
-      document.querySelectorAll("input[name='implementacion']:checked")
-    ).map((input) => input.value),
-
-    organizativas: Array.from(
-      document.querySelectorAll("input[name='organizativas']:checked")
-    ).map((input) => input.value),
-
-    mejoras: Array.from(
-      document.querySelectorAll("input[name='mejoras']:checked")
-    ).map((input) => input.value),
-
-    individual: document.querySelector("input[name='individual']:checked")
-      ?.value,
-  };
-
-  let puntaje = 0;
-
-  // Calificaciones específicas
-  if (respuestas.mision.includes("tecnologias_avanzadas")) puntaje += 0.688;
-  if (respuestas.mision.includes("automatizacion_flexibilidad"))
-    puntaje += 0.688;
-  if (respuestas.mision.includes("innovacion")) puntaje += 0.688;
-  if (respuestas.mision.includes("sostenibilidad_seguridad")) puntaje += 0.688;
-  if (respuestas.mision.includes("adaptabilidad")) puntaje += 0.688;
-
-  if (respuestas.innovacion === "transformacion_activa") puntaje += 3;
-  if (respuestas.innovacion === "transformacion_parcial") puntaje += 2.25;
-  if (respuestas.innovacion === "enfoque_tradicional") puntaje += 1.5;
-  if (respuestas.innovacion === "sin_informacion_clara") puntaje += 0.75;
-
-  if (respuestas.tendencias.includes("conectividad_avanzada")) puntaje += 0.688;
-  if (respuestas.tendencias.includes("inteligencia_artificial"))
-    puntaje += 0.688;
-  if (respuestas.tendencias.includes("robotica")) puntaje += 0.688;
-  if (respuestas.tendencias.includes("fabricacion_aditiva")) puntaje += 0.688;
-  if (respuestas.tendencias.includes("seguridad")) puntaje += 0.688;
-
-  if (respuestas.responsabilidad.includes("evaluacion_madurez"))
-    puntaje += 0.688;
-  if (respuestas.responsabilidad.includes("evaluacion_competencias"))
-    puntaje += 0.688;
-  if (respuestas.responsabilidad.includes("analisis_impacto")) puntaje += 0.688;
-  if (respuestas.responsabilidad.includes("consultorias")) puntaje += 0.688;
-  if (respuestas.responsabilidad.includes("monitoreo")) puntaje += 0.688;
-
-  if (respuestas.einnovacion.includes("desarrollo_estrategias"))
-    puntaje += 0.688;
-  if (respuestas.einnovacion.includes("cultura_innovacion")) puntaje += 0.688;
-  if (respuestas.einnovacion.includes("desarrollo_habilidades"))
-    puntaje += 0.688;
-  if (respuestas.einnovacion.includes("alianzas_estrategicas"))
-    puntaje += 0.688;
-  if (respuestas.einnovacion.includes("optimizacion_tecnologias"))
-    puntaje += 0.688;
-
-  if (respuestas.accion.includes("definicion_objetivos")) puntaje += 0.688;
-  if (respuestas.accion.includes("seleccion_tecnologias")) puntaje += 0.688;
-  if (respuestas.accion.includes("liderazgo")) puntaje += 0.688;
-  if (respuestas.accion.includes("integracion_sistemas")) puntaje += 0.688;
-  if (respuestas.accion.includes("monitoreo")) puntaje += 0.688;
-
-  if (respuestas.implementacion.includes("roi")) puntaje += 0.688;
-  if (respuestas.implementacion.includes("eficiencia_operativa"))
-    puntaje += 0.688;
-  if (respuestas.implementacion.includes("indicadores_desempeño"))
-    puntaje += 0.688;
-  if (respuestas.implementacion.includes("impacto_costos")) puntaje += 0.688;
-  if (respuestas.implementacion.includes("satisfaccion")) puntaje += 0.688;
-
-  if (respuestas.organizativas.includes("capacitacion")) puntaje += 0.688;
-  if (respuestas.organizativas.includes("innovacion")) puntaje += 0.688;
-  if (respuestas.organizativas.includes("integracion")) puntaje += 0.688;
-  if (respuestas.organizativas.includes("colaboracion")) puntaje += 0.688;
-  if (respuestas.organizativas.includes("evaluacion")) puntaje += 0.688;
-
-  if (respuestas.mejoras.includes("adopcion_tecnologias")) puntaje += 0.688;
-  if (respuestas.mejoras.includes("metodologias_agiles")) puntaje += 0.688;
-  if (respuestas.mejoras.includes("cultura_organizacional")) puntaje += 0.688;
-  if (respuestas.mejoras.includes("colaboracion")) puntaje += 0.688;
-  if (respuestas.mejoras.includes("analisis_datos")) puntaje += 0.688;
-
-  if (respuestas.individual === "impacto_crucial") puntaje += 3;
-  if (respuestas.individual === "contribucion_significativa") puntaje += 2.25;
-  if (respuestas.individual === "dependencia_organizacional") puntaje += 1.5;
-  if (respuestas.individual === "desconocido") puntaje += 0.75;
-
-  return puntaje;
+    return puntaje;
 }
+
 
 function enviarDatos() {
   console.log("Enviando datos...");
   const datos = {
-    nombreEmpresa: document.getElementById("nombre-empresa").value,
-    departamento: document.getElementById("departamento").value,
-    municipio: document.getElementById("municipio").value,
-    actividadPrincipal: document.getElementById("actividad-principal").value,
-    figuraLegal: document.getElementById("figura-legal").value,
-    nombre: document.getElementById("nombre").value,
-    sector: document.getElementById("sector").value,
-    cargo: document.getElementById("cargo").value,
-    tamano: document.getElementById("tamano").value,
-    sectorTecnologia: obtenerRespuestaRadio(
-      document.getElementsByName("sector-tecnologia")
-    ),
-    herramientas: Array.from(
-      document.querySelectorAll("input[name='herramientas']:checked")
-    )
+    nombreEmpresa: document.getElementById("nombre-empresa")?.value || "",
+    departamento: document.getElementById("departamento")?.value || "",
+    municipio: document.getElementById("municipio")?.value || "",
+    actividadPrincipal: document.getElementById("actividad-principal")?.value || "",
+    figuraLegal: document.getElementById("figura-legal")?.value || "",
+    nombre: document.getElementById("nombre")?.value || "",
+    sector: document.getElementById("sector")?.value || "",
+    cargo: document.getElementById("cargo")?.value || "",
+    tamano: document.getElementById("tamano")?.value || "",
+    sectorTecnologia: obtenerRespuestaRadio(document.getElementsByName("sector-tecnologia")) || "",
+    herramientas: Array.from(document.querySelectorAll("input[name='herramientas']:checked"))
       .map((input) => input.value)
       .join(", "),
-    estrategias: Array.from(
-      document.querySelectorAll("input[name='estrategias']:checked")
-    )
+    estrategias: Array.from(document.querySelectorAll("input[name='estrategias']:checked"))
       .map((input) => input.value)
       .join(", "),
-    contratacion: document.querySelector("input[name='contratacion']:checked")
-      ?.value,
-    personas: document.querySelector("input[name='personas']:checked")?.value,
-    factor: document.querySelector("input[name='factor']:checked")?.value,
-    principios: document.querySelector("input[name='principios']:checked")
-      ?.value,
-    desafiosm2m: Array.from(
-      document.querySelectorAll("input[name='desafiosm2m']:checked")
-    ).map((input) => input.value),
-    optimizacion: Array.from(
-      document.querySelectorAll("input[name='optimizacion']:checked")
-    ).map((input) => input.value),
-    simulacion: document.querySelector("input[name='simulacion']:checked")
-      ?.value,
-    metrica: document.querySelector("input[name='metrica']:checked")?.value,
-    produccion: document.querySelector("input[name='produccion']:checked")
-      ?.value,
-    tic: Array.from(document.querySelectorAll("input[name='tic']:checked")).map(
-      (input) => input.value
-    ),
-    rvirtual: document.querySelector("input[name='rvirtual']:checked")?.value,
-    impresion3d: Array.from(
-      document.querySelectorAll("input[name='impresion3d']:checked")
-    ).map((input) => input.value),
-    ciberfisicos: document.querySelector("input[name='ciberfisicos']:checked")
-      ?.value,
-    ia: document.querySelector("input[name='ia']:checked")?.value,
-    hmi: Array.from(document.querySelectorAll("input[name='hmi']:checked")).map(
-      (input) => input.value
-    ),
-    iot: Array.from(document.querySelectorAll("input[name='iot']:checked")).map(
-      (input) => input.value
-    ),
-    cloud: document.querySelector("input[name='cloud']:checked")?.value,
-    cad: document.querySelector("input[name='cad']:checked")?.value,
-    ti: document.querySelector("input[name='ti']:checked")?.value,
-    mision: Array.from(
-      document.querySelectorAll("input[name='mision']:checked")
-    ).map((input) => input.value),
-    innovacion: document.querySelector("input[name='innovacion']:checked")
-      ?.value,
-    tendencias: Array.from(
-      document.querySelectorAll("input[name='tendencias']:checked")
-    ).map((input) => input.value),
-    responsabilidad: document.querySelector(
-      "input[name='responsabilidad']:checked"
-    )?.value,
-    einnovacion: Array.from(
-      document.querySelectorAll("input[name='einnovacion']:checked")
-    ).map((input) => input.value),
-    accion: Array.from(
-      document.querySelectorAll("input[name='accion']:checked")
-    ).map((input) => input.value),
-    implementacion: Array.from(
-      document.querySelectorAll("input[name='implementacion']:checked")
-    ).map((input) => input.value),
-    organizativas: Array.from(
-      document.querySelectorAll("input[name='organizativas']:checked")
-    ).map((input) => input.value),
-    mejoras: Array.from(
-      document.querySelectorAll("input[name='mejoras']:checked")
-    ).map((input) => input.value),
-    individual: document.querySelector("input[name='individual']:checked")
-      ?.value,
+    contratacion: document.querySelector("input[name='contratacion']:checked")?.value || "",
+    personas: document.querySelector("input[name='personas']:checked")?.value || "",
+    factor: document.querySelector("input[name='factor']:checked")?.value || "",
+    principios: document.querySelector("input[name='principios']:checked")?.value || "",
+    desafiosm2m: Array.from(document.querySelectorAll("input[name='desafiosm2m']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    optimizacion: Array.from(document.querySelectorAll("input[name='optimizacion']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    simulacion: document.querySelector("input[name='simulacion']:checked")?.value || "",
+    metrica: document.querySelector("input[name='metrica']:checked")?.value || "",
+    produccion: document.querySelector("input[name='produccion']:checked")?.value || "",
+    tic: Array.from(document.querySelectorAll("input[name='tic']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    rvirtual: document.querySelector("input[name='rvirtual']:checked")?.value || "",
+    impresion3d: Array.from(document.querySelectorAll("input[name='impresion3d']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    ciberfisicos: document.querySelector("input[name='ciberfisicos']:checked")?.value || "",
+    ia: document.querySelector("input[name='ia']:checked")?.value || "",
+    hmi: Array.from(document.querySelectorAll("input[name='hmi']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    iot: Array.from(document.querySelectorAll("input[name='iot']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    cloud: document.querySelector("input[name='cloud']:checked")?.value || "",
+    cad: document.querySelector("input[name='cad']:checked")?.value || "",
+    ti: document.querySelector("input[name='ti']:checked")?.value || "",
+    mision: Array.from(document.querySelectorAll("input[name='mision']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    innovacion: document.querySelector("input[name='innovacion']:checked")?.value || "",
+    tendencias: Array.from(document.querySelectorAll("input[name='tendencias']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    responsabilidad: document.querySelector("input[name='responsabilidad']:checked")?.value || "",
+    einnovacion: Array.from(document.querySelectorAll("input[name='einnovacion']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    accion: Array.from(document.querySelectorAll("input[name='accion']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    implementacion: Array.from(document.querySelectorAll("input[name='implementacion']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    organizativas: Array.from(document.querySelectorAll("input[name='organizativas']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    mejoras: Array.from(document.querySelectorAll("input[name='mejoras']:checked"))
+      .map((input) => input.value)
+      .join(", "),
+    individual: document.querySelector("input[name='individual']:checked")?.value || "",
   };
 
   for (const key in datos) {
@@ -753,7 +551,7 @@ function enviarDatos() {
   }
   console.log("Datos a enviar:", datos);
 
-  fetch("https://indice-industria-4-0.onrender.com", {
+  fetch("https://indice-industria-4-0.onrender.com/guardar", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(datos),
@@ -786,10 +584,13 @@ function procesarResultados() {
   const puntajeEstrategica = calcularPuntajeEstrategica();
 
   // Calcular puntaje total
-  const puntajeTotal =
+  let puntajeTotal =
     puntajeRecursosHumanos * 0.3 + // Ponderación 30%
     puntajeTecnica * 0.36 + // Ponderación 36%
     puntajeEstrategica * 0.34; // Ponderación 34%
+
+  // Normalizar el puntaje total a una escala de 0 a 100
+  puntajeTotal = Math.min(puntajeTotal, 100);
 
   // Mostrar gráficos
   generarGraficoBarra(puntajeTotal);

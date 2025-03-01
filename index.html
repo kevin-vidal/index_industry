@@ -7,8 +7,8 @@
   <title>Índice de Industria 4.0</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- </head>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
 
 <body>
   <div class="container">
@@ -138,7 +138,7 @@
      </select>
      <br/>
      <br/>
-     <button id="continuarBtn">Enviar</button>
+     <button id="continuarBtn">Enviar Datos Básicos</button>
      <button onclick="cambiarSeccion('seccion-2')">Continuar</button>
      </section>
 
@@ -147,11 +147,11 @@
         <h2>Información adicional</h2>
  
     <!-- Nombre -->
-    <br/>
+    <!--<br/>
     <label for="nombre">¿Cuál es su nombre?</label>
     <br/>
     <br/>
-    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" class="caja-texto-mediana" required>
+    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" class="caja-texto-mediana" required> -->
 
     <!-- Sector de trabajo -->
     <br/>
@@ -200,7 +200,7 @@
     <label><input type="radio" name="sector-tecnologia" value="No"required> No</label>
     <br/>
     <br/>  
-    <button id="continuarBtn2">Enviar</button>
+    <button id="continuarBtn2">Enviar Información Adicional</button>
     <button onclick="cambiarSeccion('seccion-3')">Continuar</button>
     <button onclick="cambiarSeccion('seccion-1')">Volver</button>
     </section>
@@ -215,7 +215,7 @@
       
      <!-- Pregunta 1 -->
       <h3>Autonomía de los empleados</h3>
-      <label>¿Qué herramientas digitales utiliza la empresa para facilitar la toma de decisiones autónomas por parte de los empleados?</label>
+      <label>¿Qué herramientas digitales utiliza la empresa para facilitar la toma de decisiones autónomas por parte de los empleados? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q1a" name="herramientas" value="gestion_proyectos"> Herramientas de Gestión de Proyectos y Flujos de Trabajo (Asana, Trello, Zapier, etc.)</label>
@@ -243,7 +243,7 @@
       
      <!-- Pregunta 2 --> 
       <h3>Necesidad de los empleadores</h3>
-      <label>¿Qué estrategias adopta la empresa para garantizar la formación continua a nuevas tecnologías en sus empleados?</label>
+      <label>¿Qué estrategias adopta la empresa para garantizar la formación continua a nuevas tecnologías en sus empleados? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q2a" name="estrategias" value="capacitacion_interna"> Capacitación Interna y Mentoría (talleres, seminarios, mentoría con expertos internos, etc.)</label>
@@ -271,7 +271,7 @@
       
      <!-- Pregunta 3 --> 
       <h3>Habilidades de los empleados</h3>
-      <label>¿La empresa cuenta con un plan de contratación donde se tenga en cuenta las habilidades técnicas y blandas de los empleados en un entorno de Industria 4.0?</label>
+      <label>¿La empresa cuenta con un plan de contratación donde se tenga en cuenta las habilidades técnicas y blandas de los empleados en un entorno de Industria 4.0? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q3a" name="contratacion" value="integral"> Sí, con enfoque integral: La empresa evalúa tanto habilidades técnicas como blandas</label>
@@ -297,7 +297,7 @@
      
      <!-- Pregunta 4 --> 
       <h3>Personal capacitado</h3>
-      <label>¿Cuál es el número de personas capacitadas con cursos, certificaciones, diplomados etc., con respecto a tecnologías de la Industria 4.0? </label>
+      <label>¿Cuál es el número de personas capacitadas con cursos, certificaciones, diplomados etc., con respecto a tecnologías de la Industria 4.0? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q4a" name="personas" value="mas_100">Más de 100 personas capacitadas</label>
@@ -309,7 +309,7 @@
       <label><input type="radio" id="q4c" name="personas" value="1-25">Entre 1-25 personas capacitadas</label>
       <br/>
       <br/>
-      <label><input type="radio" id="q4d" name="personas" value="desconocido">Aún no o desconocido: No se han capacitado personas o se desconoce el número)</label>
+      <label><input type="radio" id="q4d" name="personas" value="desconocido">Aún no o desconocido: No se han capacitado personas o se desconoce el número</label>
       <br/>
       <br/>
       <button onclick="cambiarSeccion('seccion-7')">Continuar</button>
@@ -323,7 +323,7 @@
       
       <!-- Pregunta 5 -->
       <h3>Diseño centrado en el usuario</h3>
-      <label>Para la empresa, ¿El diseño centrado en el usuario es un factor importante que contribuye a la diferenciación competitiva en un mercado impulsado por la industria 4.0?</label>
+      <label>Para la empresa, ¿El diseño centrado en el usuario es un factor importante que contribuye a la diferenciación competitiva en un mercado impulsado por la industria 4.0? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q5a" name="factor" value="fundamental">Es fundamental: El diseño centrado en el usuario es clave para nuestra diferenciación competitiva</label>
@@ -348,7 +348,7 @@
       
       <!-- Pregunta 6 -->
       <h3>Diseño sensible al valor</h3>
-      <label>¿La empresa integra principios éticos y sostenibles en el diseño de productos y sistemas en la industria 4.0?</label>
+      <label>¿La empresa integra principios éticos y sostenibles en el diseño de productos y sistemas en la industria 4.0? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q6a" name="principios" value="integrados">Integrados de forma consistente: La empresa incorpora principios éticos y sostenibles en el diseño de productos y sistemas</label>
@@ -391,7 +391,7 @@
       
       <!-- Pregunta 7 -->
       <h3>Tecnología M2M</h3>
-      <label>¿Qué desafíos presenta la empresa en la implementación de tecnología M2M para asegurar una comunicación fluida entre máquinas?</label>
+      <label>¿Qué desafíos presenta la empresa en la implementación de tecnología M2M para asegurar una comunicación fluida entre máquinas? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q7a" name="desafiosm2m" value="compatibilidad"> Compatibilidad e Interoperabilidad de Sistemas</label>
@@ -419,7 +419,7 @@
       
       <!-- Pregunta 8 -->
       <h3>Optimización</h3>
-      <label>¿Qué métodos de optimización utiliza la empresa para mejorar el flujo de información en un entorno de Industria 4.0?</label>
+      <label>¿Qué métodos de optimización utiliza la empresa para mejorar el flujo de información en un entorno de Industria 4.0? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q8a" name="optimizacion" value="integracion"> Integración y Gestión de Datos</label>
@@ -447,7 +447,7 @@
       
       <!-- Pregunta 9 -->
       <h3>Simulación</h3>
-      <label>¿La empresa cuenta con procesos de simulación para mejorar la planificación y optimización de procesos en un entorno de Industria 4.0?</label>
+      <label>¿La empresa cuenta con procesos de simulación para mejorar la planificación y optimización de procesos en un entorno de Industria 4.0? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q9a" name="simulacion" value="uso_regular">Uso regular: La empresa utiliza simulaciones de manera habitual para la planificación y optimización de procesos</label>
@@ -472,7 +472,7 @@
       
       <!-- Pregunta 10 -->
       <h3> Autonomía de las máquinas</h3>
-      <label>¿La empresa cuenta con una métrica relacionada con el nivel de autonomía necesario de las máquinas para su operabilidad dentro del entorno de la industria 4.0?</label>
+      <label>¿La empresa cuenta con una métrica relacionada con el nivel de autonomía necesario de las máquinas para su operabilidad dentro del entorno de la industria 4.0? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q10a" name="metrica" value="metricas_claras">Métricas claras: La empresa tiene métricas bien definidas para medir el nivel de autonomía de las máquinas</label>
@@ -497,7 +497,7 @@
       
       <!-- Pregunta 11 -->
       <h3>Instalaciones de producción</h3>
-      <label>¿Las instalaciones de producción de la empresa cumplen con los estándares de la Industria 4.0?</label>
+      <label>¿Las instalaciones de producción de la empresa cumplen con los estándares de la Industria 4.0? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q11a" name="produccion" value="cumplimiento_total">Cumplimiento total: Todas las instalaciones de producción cumplen plenamente con los estándares de la Industria 4.0</label>
@@ -523,7 +523,7 @@
       
       <!-- Pregunta Condicional -->
       <h3>TIC</h3>
-      <label>¿Hacen uso de las TIC dentro de la empresa?</label>
+      <label>¿Hacen uso de las Tecnologías de la Información y las Comunicaciones (TIC) dentro de la empresa?</label>
       <br/>
       <br/>
       <label><input type="radio" name="uso_tic" value="Si" onclick="cambiarSeccionCondicional('seccion-16')">Si</label>
@@ -539,7 +539,7 @@
       
       <!-- Pregunta 12 -->
       <h3>TIC</h3>
-      <label>¿Qué papel desempeñan las TIC en la integración y gestión de datos en tiempo real dentro de la empresa? </label>
+      <label>¿Qué papel desempeñan las TIC en la integración y gestión de datos en tiempo real dentro de la empresa? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q12a" name="tic" value="eficiencia">Las TIC mejoran la eficiencia: Las TIC ayudan a integrar y gestionar datos en tiempo real, optimizando la toma de decisiones y mejorando la eficiencia operativa</label>
@@ -583,7 +583,7 @@
       
       <!-- Pregunta 13 -->
       <h3>Realidad virtual</h3>
-      <label>¿La empresa considera la aplicación de la realidad virtual como efectiva en el diseño y prueba de nuevos productos en el entorno de la industria 4.0?</label>
+      <label>¿La empresa considera la aplicación de la realidad virtual como efectiva en el diseño y prueba de nuevos productos en el entorno de la industria 4.0? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q13a" name="rvirtual" value="alta_efectividad">Alta efectividad y uso actual: La empresa ya utiliza la realidad virtual y la considera altamente efectiva en el diseño y prueba de productos</label>
@@ -623,7 +623,7 @@
     <section id="seccion-20" style="display: none;">
       
       <!-- Pregunta 14 -->
-      <h3>Impresión 3D</h3> <label>¿Qué ventajas posee la impresión 3D en la personalización de productos dentro de un entorno de producción flexible en la empresa? </label>
+      <h3>Impresión 3D</h3> <label>¿Qué ventajas posee la impresión 3D en la personalización de productos dentro de un entorno de producción flexible en la empresa? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q14a" name="impresion3d" value="produccion_rapida">Producción Rápida y Económica (producción a medida sin altos costos ni herramientas específicas)</label>
@@ -651,7 +651,7 @@
       
       <!-- Pregunta 15 -->
       <h3>Sistemas ciberfísicos</h3>
-      <label>¿La empresa posee sistemas ciberfísicos encargados de la automatización y monitorización de procesos industriales? </label>
+      <label>¿La empresa posee sistemas ciberfísicos encargados de la automatización y monitorización de procesos industriales? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q15a" name="ciberfisicos" value="implementacion_avanzada">Implementación avanzada: La empresa cuenta con sistemas ciberfísicos avanzados que gestionan y supervisan la mayoría de los procesos industriales</label>
@@ -676,7 +676,7 @@
       
       <!-- Pregunta 16 -->
       <h3>Inteligencia artificial</h3>
-      <label>¿La empresa hace uso de la inteligencia artificial (IA) para optimizar la eficiencia operativa y la calidad en procesos de producción?</label>
+      <label>¿La empresa hace uso de la inteligencia artificial (IA) para optimizar la eficiencia operativa y la calidad en procesos de producción? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q16a" name="ia" value="implementación_integral">Implementación integral: La empresa utiliza inteligencia artificial (IA) de manera integral para optimizar la eficiencia operativa y mejorar la calidad en los procesos de producción</label>
@@ -717,7 +717,7 @@
       
       <!-- Pregunta 17 -->
       <h3>Interfaces hombre-máquina</h3>
-      <label>¿Con cuáles tecnologías HMI cuenta la empresa para facilitar el trabajo colaborativo entre humanos y robots? </label>
+      <label>¿Con cuáles tecnologías HMI cuenta la empresa para facilitar el trabajo colaborativo entre humanos y robots? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q17a" name="hmi" value="interfaces_intuitivas">Interfaces Intuitivas para el Usuario (interfaces táctiles, paneles intuitivos, dispositivos portátiles)</label>
@@ -745,7 +745,7 @@
       
       <!-- Pregunta Condicional -->
       <h3>IoT</h3>
-      <label>¿La empresa hace uso de la tecnología IoT?</label>
+      <label>¿La empresa hace uso de la tecnología IoT (Internet de las Cosas)?</label>
       <br/>
       <br/>
       <label><input type="radio" name="uso_iot" value="Si" onclick="cambiarSeccionCondicional('seccion-26')">Sí</label>
@@ -761,7 +761,7 @@
       
       <!-- Pregunta 18 -->
       <h3>IoT</h3>
-      <label>¿Qué beneficios representa para la empresa, el IoT en la optimización de la cadena de suministro y la logística industrial?</label>
+      <label>¿Qué beneficios representa para la empresa, el IoT en la optimización de la cadena de suministro y la logística industrial? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q18a" name="iot" value="visibilidad_seguimiento">Visibilidad y Seguimiento en Tiempo Real (mejora del seguimiento de inventarios y envíos, control de calidad y estado de productos)</label>
@@ -805,7 +805,7 @@
       
       <!-- Pregunta 19 -->
       <h3>Computación en la nube</h3>
-      <label>¿Ofrece la computación en la nube el acceso y análisis de grandes volúmenes de datos en tiempo real para la empresa?</label>
+      <label>¿Ofrece la computación en la nube el acceso y análisis de grandes volúmenes de datos en tiempo real para la empresa? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q19a" name="cloud" value="implementacion_efectiva">Implementación efectiva: La computación en la nube permite el acceso y análisis de grandes volúmenes de datos en tiempo real de manera eficiente</label>
@@ -831,7 +831,7 @@
       
       <!-- Pregunta Condicional -->
       <h3>CAD</h3>
-      <label> ¿La empresa hace uso de programas de diseño CAD?</label>
+      <label> ¿La empresa hace uso de programas de diseño CAD (Diseño Asistido por Computadora)?</label>
       <br/>
       <br/>
       <label><input type="radio" name="uso_cad" value="Si" onclick="cambiarSeccionCondicional('seccion-30')"> Sí</label>
@@ -847,7 +847,7 @@
       
       <!-- Pregunta 20 -->
       <h3>CAD</h3>
-      <label>¿La empresa integra el CAD con otras tecnologías como la impresión 3D para procesos de desarrollo y diseño de productos?</label>
+      <label>¿La empresa integra el CAD con otras tecnologías como la impresión 3D para procesos de desarrollo y diseño de productos? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q20a" name="cad" value="integracion_completa">Integración completa: La empresa integra CAD con impresión 3D de manera fluida y efectiva en todos los procesos de desarrollo y diseño de productos</label>
@@ -872,7 +872,7 @@
       
       <!-- Pregunta 21 -->
       <h3>Sistemas TI</h3>
-      <label>¿La empresa utiliza los sistemas TI para ayudar a proteger la infraestructura industrial de ciberataques y garantizar la continuidad del negocio?</label>
+      <label>¿La empresa utiliza los sistemas TI (Tecnologías de la Información) para ayudar a proteger la infraestructura industrial de ciberataques y garantizar la continuidad del negocio? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q21a" name="ti" value="proteccion_avanzada">Protección avanzada: La empresa utiliza sistemas TI avanzados y actualizados para proteger la infraestructura industrial contra ciberataques y asegurar la continuidad del negocio</label>
@@ -899,7 +899,7 @@
       
       <!-- Pregunta 22 -->
       <h3>Misión y visión</h3>
-      <label>¿Qué elementos clave de la Industria 4.0 deben incorporarse en la misión y visión para guiar la transformación digital de la empresa?</label>
+      <label>¿Qué elementos clave de la Industria 4.0 deben incorporarse en la misión y visión para guiar la transformación digital de la empresa? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q22a" name="mision" value="tecnologias_avanzadas">Adopción de Tecnologías Avanzadas (IoT, inteligencia artificial, análisis de datos)</label>
@@ -927,7 +927,7 @@
       
       <!-- Pregunta 23 -->
       <h3>Innovación abierta y disruptiva</h3>
-      <label>¿La empresa contempla la innovación disruptiva en el marco de la Industria 4.0, para transformar el modelo de negocio tradicional?</label>
+      <label>¿La empresa contempla la innovación disruptiva en el marco de la Industria 4.0, para transformar el modelo de negocio tradicional? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q23a" name="innovacion" value="transformacion_activa">Transformación activa: La empresa está implementando activamente tecnologías disruptivas de la Industria 4.0 para transformar su modelo de negocio tradicional</label>
@@ -953,7 +953,7 @@
       
       <!-- Pregunta 24 -->
       <h3>Tendencias tecnológicas</h3>
-      <label>¿Cuáles son las tendencias tecnológicas emergentes de la Industria 4.0 que podrían adaptar en la empresa para transformar los procesos de fabricación?</label>
+      <label>¿Cuáles son las tendencias tecnológicas emergentes de la Industria 4.0 que podrían adaptar en la empresa para transformar los procesos de fabricación? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q24a" name="tendencias" value="conectividad_avanzada">IoT y Conectividad Avanzada (IoT, redes 5G para monitorización y comunicación en tiempo real)</label>
@@ -981,7 +981,7 @@
       
       <!-- Pregunta 25 -->
       <h3>Estado de situación</h3>
-      <label>¿Qué metodologías considera la empresa son efectivas para realizar un diagnóstico del estado de situación en relación con la transformación digital en la Industria 4.0?</label>
+      <label>¿Qué metodologías considera la empresa son efectivas para realizar un diagnóstico del estado de situación en relación con la transformación digital en la Industria 4.0? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q25a" name="responsabilidad" value="evaluacion_madurez">Evaluación de Madurez y Capacidades Digitales (modelo de madurez, auditorías tecnológicas, evaluación de herramientas existentes)</label>
@@ -1009,7 +1009,7 @@
       
       <!-- Pregunta 26 -->
       <h3>Marco de innovación</h3>
-      <label>Dentro del marco de innovación, ¿Qué estrategias considera la empresa son esenciales para aprovechar las tecnologías de la Industria 4.0?</label>
+      <label>Dentro del marco de innovación, ¿Qué estrategias considera la empresa son esenciales para aprovechar las tecnologías de la Industria 4.0? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q26a" name="einnvovacion" value="desarrollo_estrategias">Desarrollo de Estrategias y Planes (hoja de ruta clara, proyectos piloto, metodologías ágiles)</label>
@@ -1037,7 +1037,7 @@
       
       <!-- Pregunta 27 -->
       <h3>Plan de acción</h3>
-      <label>¿Cuáles son los componentes esenciales de un plan de acción efectivo para la implementación de la Industria 4.0 según la empresa?</label>
+      <label>¿Cuáles son los componentes esenciales de un plan de acción efectivo para la implementación de la Industria 4.0 según la empresa? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q27a" name="accion" value="definicion_objetivos">Definición de Objetivos y Planificación (objetivos alineados con la estrategia, hoja de ruta detallada)</label>
@@ -1065,7 +1065,7 @@
       
       <!-- Pregunta 28 -->
       <h3>Implementación</h3>
-      <label>¿Cómo mide la empresa el éxito de la implementación de la Industria 4.0 en términos de retorno de la inversión y eficiencia operativa?</label>
+      <label>¿Cómo mide la empresa el éxito de la implementación de la Industria 4.0 en términos de retorno de la inversión y eficiencia operativa? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q28a" name="implementacion" value="roi">Análisis de Retorno de la Inversión (ROI) (comparación de costos de implementación y beneficios financieros)</label>
@@ -1094,7 +1094,7 @@
       
       <!-- Pregunta 29 -->
       <h3>Unidades organizativas</h3>
-      <label>¿Cómo pueden las unidades organizativas dentro de la empresa adaptarse para aprovechar las tecnologías de la Industria 4.0?</label>
+      <label>¿Cómo pueden las unidades organizativas dentro de la empresa adaptarse para aprovechar las tecnologías de la Industria 4.0? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q29a" name="organizativas" value="capacitacion">Capacitación y Desarrollo (programas de capacitación continua, adquisición de habilidades tecnológicas)</label>
@@ -1122,7 +1122,7 @@
       
       <!-- Pregunta 30 -->
       <h3>Gestión de organizaciones Dinámicas</h3>
-      <label>¿Qué mejoras considera la empresa para adaptarse rápidamente a las demandas cambiantes del mercado en la Industria 4.0?</label>
+      <label>¿Qué mejoras considera la empresa para adaptarse rápidamente a las demandas cambiantes del mercado en la Industria 4.0? (Puede seleccionar más de una opción)</label>
       <br/>
       <br/>
       <label><input type="checkbox" id="q30a" name="mejoras" value="adopcion_tecnologias">Adopción de Tecnologías Ágiles (soluciones en la nube, plataformas modulares, inteligencia artificial)</label>
@@ -1150,7 +1150,7 @@
       
       <!-- Pregunta 31 -->
       <h3>Responsabilidad Individual</h3>
-      <label>¿La responsabilidad individual puede contribuir al éxito de la adopción de tecnologías de Industria 4.0 en la empresa?</label>
+      <label>¿La responsabilidad individual puede contribuir al éxito de la adopción de tecnologías de Industria 4.0 en la empresa? (Seleccione solo una opción)</label>
       <br/>
       <br/>
       <label><input type="radio" id="q31a" name="individual" value="impacto_crucial">Impacto crucial: La responsabilidad individual es clave para el éxito de la adopción de tecnologías de Industria 4.0, asegurando compromiso y proactividad en la implementación</label>
@@ -1181,7 +1181,7 @@
       <p>Consulta los resultados obtenidos del análisis:</p>
       <br/>
       <br/>
-      <button onclick="finalizarCuestionario()">Enviar</button>
+      <button onclick="finalizarCuestionario()">Enviar Resultados</button>
       <button onclick="procesarResultados()">Calcular Puntaje</button>
       <!-- Contenedores de los gráficos -->
       <div style="display: flex; flex-direction: column; justify-content: space-around; margin-top: 20px;">
@@ -1199,7 +1199,7 @@
     
      <!-- Enlace a la librería SheetJS -->
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-    </div>
+  </div>
 
 </body>
 
