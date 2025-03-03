@@ -470,6 +470,12 @@ function calcularPuntajeEstrategica() {
 }
 
 
+function obtenerRespuestaRadio(nodelist) {
+  const seleccionado = Array.from(nodelist).find((input) => input.checked);
+  return seleccionado ? seleccionado.value : "";
+}
+
+
 function enviarDatos() {
   console.log("Enviando datos...");
   const datos = {
