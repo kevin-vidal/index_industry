@@ -6,11 +6,11 @@ const departamento = document.getElementById("departamento");
 const municipio = document.getElementById("municipio");
 const actividadPrincipal = document.getElementById("actividad-principal");
 const figuraLegal = document.getElementById("figura-legal");
-//const continuarBtn = document.getElementById("continuar");
+const continuarBtn = document.getElementById("continuar");
 
 // Lógica para el botón Continuar
 
-continuarBtn2.addEventListener("click", () => {
+continuarBtn.addEventListener("click", () => {
   const datosBasicos = {
     nombreEmpresa: nombreEmpresa.value,
     departamento: departamento.value,
@@ -33,10 +33,11 @@ continuarBtn2.addEventListener("click", () => {
 
   console.log("Datos Básicos:", datosBasicos);
   alert("Datos registrados correctamente.");
+  cambiarSeccion('seccion-2'); // Cambiar a la siguiente sección
 });
 
 // Variables para los campos
-const nombre = document.getElementById("nombre");
+// const nombre = document.getElementById("nombre");
 const sector = document.getElementById("sector");
 const cargo = document.getElementById("cargo");
 const tamano = document.getElementById("tamano");
@@ -53,9 +54,9 @@ function obtenerRespuestaRadio(nodo) {
 }
 
 // Lógica para validar y capturar los datos
-continuarBtn.addEventListener("click", () => {
+continuarBtn2.addEventListener("click", () => {
   const informacionAdicional = {
-    nombre: nombre.value,
+//  nombre: nombre.value,
     sector: sector.value,
     cargo: cargo.value,
     tamano: tamano.value,
@@ -64,20 +65,19 @@ continuarBtn.addEventListener("click", () => {
 
   // Validar campos obligatorios
   if (
-    !informacionAdicional.nombre ||
+//  !informacionAdicional.nombre ||
     !informacionAdicional.sector ||
     !informacionAdicional.cargo ||
     !informacionAdicional.tamano ||
     !informacionAdicional.sectorTecnologia
   ) {
-    alert(
-      "Por favor, completa todos los campos de la sección 'Información adicional'."
-    );
+    alert("Por favor, completa todos los campos de la sección 'Información adicional'.");
     return;
   }
 
   console.log("Información adicional:", informacionAdicional);
   alert("Información adicional registrada correctamente.");
+  cambiarSeccion('seccion-3'); // Cambiar a la siguiente sección
 });
 
 // Función para cambiar de sección
@@ -138,17 +138,24 @@ function capturarRespuestas() {
 }
 
 // Función para cambiar de sección condicionalmente
-function cambiarSeccionCondicional(seccionDestino) {
-  // Oculta todas las secciones actuales
+function cambiarSeccionCondicional(idSi, idNo) {
+  const seccionActual = document.querySelector('section:not([style*="display: none"])');
+  const respuesta = document.querySelector(`input[name="${seccionActual.querySelector('input[type="radio"]').name}"]:checked`).value;
+  const siguienteSeccion = respuesta === "Si" ? idSi : idNo;
+
+  // Oculta todas las secciones
   const secciones = document.querySelectorAll("section");
   secciones.forEach((seccion) => {
     seccion.style.display = "none";
   });
 
-  // Muestra la sección condicional correspondiente
-  const destino = document.getElementById(seccionDestino);
-  if (destino) {
-    destino.style.display = "block";
+  // Muestra la sección solicitada
+  document.getElementById(siguienteSeccion).style.display = "block";
+
+  // Actualiza el botón "Volver" de la siguiente sección
+  const botonVolver = document.querySelector(`#${siguienteSeccion} button[onclick^="cambiarSeccion"]`);
+  if (botonVolver) {
+    botonVolver.setAttribute("onclick", `cambiarSeccion('${seccionActual.id}')`);
   }
 }
 
