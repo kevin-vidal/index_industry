@@ -1,99 +1,101 @@
 // script.js
 
-// Variables para los campos
-const nombreEmpresa = document.getElementById("nombre-empresa");
-const departamento = document.getElementById("departamento");
-const municipio = document.getElementById("municipio");
-const actividadPrincipal = document.getElementById("actividad-principal");
-const figuraLegal = document.getElementById("figura-legal");
-const continuarBtn = document.getElementById("continuar");
+document.addEventListener("DOMContentLoaded", function() {
+  // Variables para los campos de datos básicos
+  const nombreEmpresa = document.getElementById("nombre-empresa");
+  const departamento = document.getElementById("departamento");
+  const municipio = document.getElementById("municipio");
+  const actividadPrincipal = document.getElementById("actividad-principal");
+  const figuraLegal = document.getElementById("figura-legal");
+  const continuarBtn = document.getElementById("continuarBtn");
 
-// Lógica para el botón Continuar
+  // Lógica para el botón Continuar de datos básicos
+  continuarBtn.addEventListener("click", () => {
+    const datosBasicos = {
+      nombreEmpresa: nombreEmpresa.value,
+      departamento: departamento.value,
+      municipio: municipio.value,
+      actividadPrincipal: actividadPrincipal.value,
+      figuraLegal: figuraLegal.value,
+    };
 
-continuarBtn.addEventListener("click", () => {
-  const datosBasicos = {
-    nombreEmpresa: nombreEmpresa.value,
-    departamento: departamento.value,
-    municipio: municipio.value,
-    actividadPrincipal: actividadPrincipal.value,
-    figuraLegal: figuraLegal.value,
-  };
-
-  // Validar campos obligatorios
-  if (
-    !datosBasicos.nombreEmpresa ||
-    !datosBasicos.departamento ||
-    !datosBasicos.municipio ||
-    !datosBasicos.actividadPrincipal ||
-    !datosBasicos.figuraLegal
-  ) {
-    alert("Por favor, completa todos los campos.");
-    return;
-  }
-
-  console.log("Datos Básicos:", datosBasicos);
-  alert("Datos registrados correctamente.");
-  cambiarSeccion('seccion-2'); // Cambiar a la siguiente sección
-});
-
-// Variables para los campos
-// const nombre = document.getElementById("nombre");
-const sector = document.getElementById("sector");
-const cargo = document.getElementById("cargo");
-const tamano = document.getElementById("tamano");
-const sectorTecnologia = document.getElementsByName("sector-tecnologia");
-
-// Función para obtener la respuesta seleccionada de los botones de radio
-function obtenerRespuestaRadio(nodo) {
-  for (let i = 0; i < nodo.length; i++) {
-    if (nodo[i].checked) {
-      return nodo[i].value;
+    // Validar campos obligatorios
+    if (
+      !datosBasicos.nombreEmpresa ||
+      !datosBasicos.departamento ||
+      !datosBasicos.municipio ||
+      !datosBasicos.actividadPrincipal ||
+      !datosBasicos.figuraLegal
+    ) {
+      alert("Por favor, completa todos los campos.");
+      return;
     }
-  }
-  return null;
-}
 
-// Lógica para validar y capturar los datos
-continuarBtn2.addEventListener("click", () => {
-  const informacionAdicional = {
-//  nombre: nombre.value,
-    sector: sector.value,
-    cargo: cargo.value,
-    tamano: tamano.value,
-    sectorTecnologia: obtenerRespuestaRadio(sectorTecnologia),
-  };
+    console.log("Datos Básicos:", datosBasicos);
+    alert("Datos registrados correctamente.");
+    cambiarSeccion('seccion-2'); // Cambiar a la siguiente sección
+  });
 
-  // Validar campos obligatorios
-  if (
-//  !informacionAdicional.nombre ||
-    !informacionAdicional.sector ||
-    !informacionAdicional.cargo ||
-    !informacionAdicional.tamano ||
-    !informacionAdicional.sectorTecnologia
-  ) {
-    alert("Por favor, completa todos los campos de la sección 'Información adicional'.");
-    return;
+  // Variables para los campos de información adicional
+  const sector = document.getElementById("sector");
+  const cargo = document.getElementById("cargo");
+  const tamano = document.getElementById("tamano");
+  const sectorTecnologia = document.getElementsByName("sector-tecnologia");
+  const continuarBtn2 = document.getElementById("continuarBtn2");
+
+  // Función para obtener la respuesta seleccionada de los botones de radio
+  function obtenerRespuestaRadio(nodo) {
+    for (let i = 0; i < nodo.length; i++) {
+      if (nodo[i].checked) {
+        return nodo[i].value;
+      }
+    }
+    return null;
   }
 
-  console.log("Información adicional:", informacionAdicional);
-  alert("Información adicional registrada correctamente.");
-  cambiarSeccion('seccion-3'); // Cambiar a la siguiente sección
-});
+  // Lógica para validar y capturar los datos de información adicional
+  continuarBtn2.addEventListener("click", () => {
+    const informacionAdicional = {
+      sector: sector.value,
+      cargo: cargo.value,
+      tamano: tamano.value,
+      sectorTecnologia: obtenerRespuestaRadio(sectorTecnologia),
+    };
 
-// Función para cambiar de sección
-function cambiarSeccion(idSiguiente) {
+    // Validar campos obligatorios
+    if (
+      !informacionAdicional.sector ||
+      !informacionAdicional.cargo ||
+      !informacionAdicional.tamano ||
+      !informacionAdicional.sectorTecnologia
+    ) {
+      alert("Por favor, completa todos los campos de la sección 'Información adicional'.");
+      return;
+    }
+
+    console.log("Información adicional:", informacionAdicional);
+    alert("Información adicional registrada correctamente.");
+    cambiarSeccion('seccion-3'); // Cambiar a la siguiente sección
+  });
+
+  // Función para cambiar de sección
+    function cambiarSeccion(idSiguiente) {
   // Oculta todas las secciones
-  const secciones = document.querySelectorAll("section");
-  secciones.forEach((seccion) => {
+    const secciones = document.querySelectorAll("section");
+    secciones.forEach((seccion) => {
     seccion.style.display = "none";
   });
 
-  // Muestra la sección solicitada
+    // Muestra la sección solicitada
   const siguienteSeccion = document.getElementById(idSiguiente);
   if (siguienteSeccion) {
     siguienteSeccion.style.display = "block";
   }
-}
+  }
+  }
+);
+
+
 
 // Captura de respuestas al final de "Recursos Humanos"
 function capturarRespuestas() {
@@ -138,24 +140,17 @@ function capturarRespuestas() {
 }
 
 // Función para cambiar de sección condicionalmente
-function cambiarSeccionCondicional(idSi, idNo) {
-  const seccionActual = document.querySelector('section:not([style*="display: none"])');
-  const respuesta = document.querySelector(`input[name="${seccionActual.querySelector('input[type="radio"]').name}"]:checked`).value;
-  const siguienteSeccion = respuesta === "Si" ? idSi : idNo;
-
-  // Oculta todas las secciones
+function cambiarSeccionCondicional(seccionDestino) {
+  // Oculta todas las secciones actuales
   const secciones = document.querySelectorAll("section");
   secciones.forEach((seccion) => {
     seccion.style.display = "none";
   });
 
-  // Muestra la sección solicitada
-  document.getElementById(siguienteSeccion).style.display = "block";
-
-  // Actualiza el botón "Volver" de la siguiente sección
-  const botonVolver = document.querySelector(`#${siguienteSeccion} button[onclick^="cambiarSeccion"]`);
-  if (botonVolver) {
-    botonVolver.setAttribute("onclick", `cambiarSeccion('${seccionActual.id}')`);
+  // Muestra la sección condicional correspondiente
+  const destino = document.getElementById(seccionDestino);
+  if (destino) {
+    destino.style.display = "block";
   }
 }
 
