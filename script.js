@@ -579,7 +579,7 @@ function enviarDatos() {
 // Botón de finalización para enviar datos
 function finalizarCuestionario() {
   enviarDatos(); // Captura los datos del cuestionario
-  alert("¡Cuestionario enviado correctamente!");
+  alert("Espere por favor 1 minuto, hasta que se guarden las respuestas.");
 }
 
 // Función para recolectar respuestas y calcular puntajes
